@@ -1,0 +1,17 @@
+.container{
+    background-image: url('../../assets/images/AboutUs.jpeg');
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    padding: 3rem;
+}
+
+.heading{
+    text-decoration: underline;
+}
+.para{
+    font-size: 18px;
+    padding-bottom: 3rem;
+}
+.below{
+    font-size: 18px;
+}
