@@ -10,7 +10,7 @@ function Header() {
           <img src={logo} className="logo-img" alt="" />
           <div className="center">
             <h1 className="Mothercode">
-            <Typewriter words={["CODING CLUB"]} loop={false} cursor typeSpeed={50} deleteSpeed={50} delaySpeed={2000}  cursorStyle='|'/>
+            <Typewriter words={["CODING CLUB"]} loop={false} cursor typeSpeed={100} deleteSpeed={50} delaySpeed={2000}  cursorStyle='|'/>
                 </h1>
             <h2  className="poppins" style={{margin:0}}>BITS PILANI</h2>
           </div>
