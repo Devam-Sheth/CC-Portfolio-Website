@@ -1,6 +1,6 @@
 import React from "react";
 import "./Team.css";
-import ai from "../../assets/images/AI:ML Lead.jpeg";
+import ai from "../../assets/images/AIML Lead.jpeg";
 import apogee from "../../assets/images/Apooge Coord.jpeg";
 import bosm from "../../assets/images/BOSM Joint Coord.jpeg";
 import cc from "../../assets/images/Competitive Coding Lead.jpeg";
