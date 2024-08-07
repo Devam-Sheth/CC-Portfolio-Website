@@ -14,12 +14,20 @@ const AboutUs = () => {
   ];
   return (
     <div className="container">
-      {content.map((item, index) => (
-        <div className="content" key={index}>
-          <h1 className="heading">{item.heading}</h1>
-          <p className="para">{item.para}</p>
-        </div>
-      ))}
+      {content.map((item, index) =>
+        index !== 0 ? (
+          <div key={index}>
+            <h1 className="heading">{item.heading}</h1>
+            <p className="para">{item.para}</p>
+          </div>
+        ) : (
+          <div className="content-with-logo" key={index}>
+            <h1 className="heading">{item.heading}</h1>
+            <p className="para">{item.para}</p>
+            <img src={CCLogo} alt="Logo" className="cc-logo" />
+          </div>
+        )
+      )}
       <p className="below">Do check out some for our work below!</p>
     </div>
   );

@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import { highlightsSlides } from "./SlideInfo";
-import "./VideoCarousel.css";
+import "./Carousel.css";
 import playIcon from "../../assets/images/play2.png";
 import pauseIcon from "../../assets/images/pause2.png";
 
-const VideoCarousel = () => {
+const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const intervalRef = useRef(null);
@@ -36,15 +36,6 @@ const VideoCarousel = () => {
           ))}
         </div>
         <div className="controls-container">
-          <div className="button-wrapper">
-            <button onClick={handlePausePlay} className="play-pause-button">
-              <img
-                src={isPlaying ? pauseIcon : playIcon}
-                alt={isPlaying ? "Pause" : "Play"}
-              />
-            </button>
-          </div>
-
           <div className="dots-wrapper">
             <div className="dots-container">
               {highlightsSlides.map((_, index) => (
@@ -55,10 +46,16 @@ const VideoCarousel = () => {
               ))}
             </div>
           </div>
+          <img
+            src={isPlaying ? pauseIcon : playIcon}
+            alt={isPlaying ? "Pause" : "Play"}
+            className="play-pause-icon"
+            onClick={handlePausePlay}
+          />
         </div>
       </div>
     </div>
   );
 };
 
-export default VideoCarousel;
+export default Carousel;

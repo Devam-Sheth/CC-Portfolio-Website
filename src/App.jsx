@@ -1,7 +1,7 @@
 import "./App.css";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Header from "./components/Header/Header";
-import AnimatedCarousel from "./components/AnimatedCarousel/VideoCarousel";
+import Carousel from "./components/Carousel/Carousel";
 import ContactUs from "./components/ContactUs/ContactUs";
 import Verticals from "./components/Verticals/Verticals";
 import Team from "./components/Team/Team";
@@ -11,6 +11,7 @@ function App() {
       <Header />
       <Team />
       <AboutUs />
+      <Carousel />
     </>
   );
 }
