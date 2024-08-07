@@ -1,100 +1,92 @@
-.carousel-container {
-  padding: 1.25rem;
-  margin-inline: 15rem;
-  width: 100vw;
-  aspect-ratio: 30/9;
+/* Carousel.css */
+.carousel {
+  position: relative;
+  width: 80%;
+  margin-inline: auto; /* Center horizontally with a margin */
+  aspect-ratio: 16 / 9; /* Set the aspect ratio */
+  overflow: hidden;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background-color: rgb(43, 40, 40);
-  color: white;
-  border-radius: 1rem;
-  flex-direction: column;
+  background: #f0f0f0; /* Optional: for better visibility */
 }
 
-#slider {
-  margin-bottom: 1.25rem;
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  width: 40px; /* Adjust size of the button */
+  height: 40px; /* Adjust size of the button */
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.carousel-button img {
+  width: 100%;
+  height: auto;
 }
 
 .carousel-content {
+  flex: 1;
+  text-align: center;
+}
+
+.carousel-text {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.carousel-dots {
+  text-align: center;
+  position: absolute;
+  bottom: 10px; /* Position the dots at the bottom */
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-button {
-  width: 1rem;
-  height: 1.8rem;
-}
-
-.play-pause-button {
-  background-color: white;
+  justify-content: center;
   padding: 0;
-  border: none;
-  cursor: pointer;
+  margin: 0;
+}
+
+.dot-container {
+  position: relative;
   display: flex;
   align-items: center;
-  outline: none;
-  width: 100%;
-}
-
-img.play-pause-icon {
-  background-blend-mode: color-burn;
-  width: 2rem;
-  margin-left: 1rem;
-}
-
-.play-pause-button:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-.progress-bar-container {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.controls-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 8rem;
-}
-
-.button-wrapper {
-  background-color: #f0f0f0;
-  border-radius: 10px;
-  width: 3rem;
-  display: flex;
-  justify-content: center;
-  margin-left: 1rem;
-}
-
-.dots-wrapper {
-  background-color: #f0f0f0;
-  padding: 0.625rem;
-  border-radius: 10px;
-}
-
-.dots-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  gap: 0.5rem; /* Space between dots */
 }
 
 .dot {
-  height: 0.5rem;
-  width: 0.5rem;
-  margin: 0 0.3rem;
+  width: 10px;
+  height: 10px;
   background-color: #bbb;
   border-radius: 50%;
-  display: inline-block;
+  transition: background-color 0.3s, width 0.3s;
 }
 
 .dot.active {
-  background-color: #717171;
+  background-color: #333;
+  width: 100%; /* Expands to cover the container */
+  position: relative;
+  width: 5rem; /* Width of the progress bar */
+  height: 10px; /* Height of the progress bar */
+  background-color: #bbb;
+  border-radius: 5px;
+  display: flex;
+}
+
+.active-dot-inner {
+  height: 100%;
+  background-color: #333;
+  border-radius: 5px;
+  transition: width 0.3s;
 }
