@@ -44,20 +44,22 @@ const Team = () => {
   ];
   return (
     <>
-      <h1 className="team-head">MEET THE TEAM!</h1>
-      <div className="team">
-        {data.map((member, index) => (
-          <div key={index} className="team-member">
-            <img src={member.image} alt={member.name} className="por-image" />
-            <h3>{member.name}</h3>
-            <p>{member.role}</p>
-            <div className="social-media-handles">
-              <img src={linkedinLogo} alt="" />
-              <img src={githubLogo} alt="" />
-              <img src={instagramLogo} alt="" />
+      <div className="team-container">
+        <h1 className="team-head">MEET THE TEAM!</h1>
+        <div className="team">
+          {data.map((member, index) => (
+            <div key={index} className="team-member">
+              <img src={member.image} alt={member.name} className="por-image" />
+              <h3>{member.name}</h3>
+              <p>{member.role}</p>
+              <div className="social-media-handles">
+                <img src={linkedinLogo} alt="" />
+                <img src={githubLogo} alt="" />
+                <img src={instagramLogo} alt="" />
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </>
   );

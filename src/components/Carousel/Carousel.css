@@ -1,70 +1,92 @@
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
+/* Carousel.css */
 .carousel {
   position: relative;
-  width: 80vw; /* 80% of viewport width */
-  height: 70vh; /* 70% of viewport height */
-  max-width: 1200px; /* Optional: set a maximum width */
-  max-height: 800px; /* Optional: set a maximum height */
-  margin: auto;
+  width: 80%;
+  margin-inline: auto; /* Center horizontally with a margin */
+  aspect-ratio: 16 / 9; /* Set the aspect ratio */
   overflow: hidden;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 50%;
-}
-
-.carousel-slide-container {
   display: flex;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-}
-
-.carousel-slide {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 100%;
-  height: 100%;
-}
-
-.carousel-item {
-  min-width: 100%;
-  height: 100%; /* Full height of the carousel */
-  display: flex;
-  justify-content: center;
   align-items: center;
-  color: white;
-  font-size: 2rem; /* Adjust font size as needed */
-  font-weight: bold;
-  background-color: #ff6f61; /* Default color, change dynamically */
+  background: #f0f0f0; /* Optional: for better visibility */
 }
 
-.carousel-control {
+.carousel-button {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
+  background: rgba(0, 0, 0, 0.5);
   border: none;
-  padding: 10px 20px;
   cursor: pointer;
-  z-index: 10; /* Ensure controls are above other elements */
+  z-index: 1;
+  width: 40px; /* Adjust size of the button */
+  height: 40px; /* Adjust size of the button */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.carousel-control.prev {
-  left: 10px; /* Adjust positioning as needed */
+.prev {
+  left: 10px;
 }
 
-.carousel-control.next {
-  right: 10px; /* Adjust positioning as needed */
+.next {
+  right: 10px;
+}
+
+.carousel-button img {
+  width: 100%;
+  height: auto;
+}
+
+.carousel-content {
+  flex: 1;
+  text-align: center;
 }
 
 .carousel-text {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.carousel-dots {
+  text-align: center;
+  position: absolute;
+  bottom: 10px; /* Position the dots at the bottom */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0;
   margin: 0;
+}
+
+.dot-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Space between dots */
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  transition: background-color 0.3s, width 0.3s;
+}
+
+.dot.active {
+  background-color: #333;
+  width: 100%; /* Expands to cover the container */
+  position: relative;
+  width: 5rem; /* Width of the progress bar */
+  height: 10px; /* Height of the progress bar */
+  background-color: #bbb;
+  border-radius: 5px;
+  display: flex;
+}
+
+.active-dot-inner {
+  height: 100%;
+  background-color: #333;
+  border-radius: 5px;
+  transition: width 0.3s;
 }
