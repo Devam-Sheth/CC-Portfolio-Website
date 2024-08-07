@@ -13,6 +13,8 @@ function App() {
       <Team />
       <AboutUs />
       <Carousel />
+      <Verticals />
+      <ContactUs />
     </>
   );
 }

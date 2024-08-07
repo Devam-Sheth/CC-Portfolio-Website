@@ -1,6 +1,17 @@
 .animated-div {
+  flex: 1;
   margin: 20px;
   padding: 20px;
+  display: flex; /* Ensures children are aligned properly */
+  align-items: center; /* Centers children vertically */
+  justify-content: center; /* Centers children horizontally */
+  overflow: hidden; /* Prevents overflow */
+}
+
+.animated-div img {
+  width: 100%; /* Makes the image take full width of its container */
+  height: 100%; /* Makes the image take full height of its container */
+  object-fit: cover; /* Ensures the image covers the container without distortion */
 }
 
 .vertical {
@@ -9,21 +20,17 @@
   align-items: center;
   justify-content: center;
   margin: 20px;
-}
-
-.play-pause-button img {
-  width: 30vw;
-  height: auto;
-  border-radius: 20px 0 20px 0;
-  filter: brightness(1.2) contrast(0.8) saturate(1.5);
-  background: linear-gradient(to bottom, #fff, #ccc);
-  border: 5px solid black;
+  height: 100%; /* Makes the vertical container take full height */
 }
 
 .appearedText {
   text-align: center;
   max-width: 50vw;
   font-size: 20px;
+  height: 100%; /* Ensures the text container takes full height */
+  display: flex; /* Allows children to use flexbox properties */
+  flex-direction: column; /* Aligns text vertically */
+  justify-content: center; /* Centers text vertically */
 }
 
 .appearedText h2 {
@@ -41,11 +48,6 @@
 }
 
 @media (max-width: 900px) {
-  .play-pause-button img {
-    width: 80vw;
-    height: auto;
-  }
-
   .animated-div {
     margin: 5px;
     padding: 5px;

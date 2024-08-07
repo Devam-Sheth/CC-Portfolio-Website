@@ -1,15 +1,10 @@
+// AnimatedDivLeft.js
 import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./AnimatedDiv.css";
 
 gsap.registerPlugin(ScrollTrigger);
-var xRange = -50;
-window.addEventListener("resize", function () {
-  if (window.innerWidth <= 800) {
-    xRange = 0;
-  }
-});
 
 const AnimatedDivLeft = ({ children }) => {
   const divRef = useRef(null);
@@ -19,7 +14,7 @@ const AnimatedDivLeft = ({ children }) => {
       divRef.current,
       {
         opacity: 0,
-        y: xRange,
+        y: -50,
         x: -50,
       },
       {
@@ -31,7 +26,8 @@ const AnimatedDivLeft = ({ children }) => {
           trigger: divRef.current,
           start: "top 80%",
           end: "bottom 20%",
-          toggleActions: "play reverse play reverse",
+          toggleActions: "play none none none", // Only play animation once when entering view
+          once: true, // Ensure animation plays only once
         },
       }
     );
