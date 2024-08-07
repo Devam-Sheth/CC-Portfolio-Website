@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { highlightsSlides } from './SlideInfo';
-import './VideoCarousel.css';
-import playIcon from './play2.png';
-import pauseIcon from './pause2.png';
+import React, { useState, useEffect, useRef } from "react";
+import { highlightsSlides } from "./SlideInfo";
+import "./VideoCarousel.css";
+import playIcon from "/images/play2.png";
+import pauseIcon from "/images/pause2.png";
 
 const VideoCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -12,7 +12,9 @@ const VideoCarousel = () => {
   useEffect(() => {
     if (isPlaying) {
       intervalRef.current = setInterval(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % highlightsSlides.length);
+        setCurrentIndex(
+          (prevIndex) => (prevIndex + 1) % highlightsSlides.length
+        );
       }, 5000);
     } else {
       clearInterval(intervalRef.current);
@@ -34,18 +36,21 @@ const VideoCarousel = () => {
           ))}
         </div>
         <div className="controls-container">
-            <div className='button-wrapper'>
+          <div className="button-wrapper">
             <button onClick={handlePausePlay} className="play-pause-button">
-            <img src={isPlaying ? pauseIcon : playIcon} alt={isPlaying ? 'Pause' : 'Play'} />
-          </button>
-            </div>
-          
+              <img
+                src={isPlaying ? pauseIcon : playIcon}
+                alt={isPlaying ? "Pause" : "Play"}
+              />
+            </button>
+          </div>
+
           <div className="dots-wrapper">
             <div className="dots-container">
               {highlightsSlides.map((_, index) => (
                 <span
                   key={index}
-                  className={`dot ${index === currentIndex ? 'active' : ''}`}
+                  className={`dot ${index === currentIndex ? "active" : ""}`}
                 />
               ))}
             </div>
