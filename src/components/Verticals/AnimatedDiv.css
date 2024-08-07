@@ -1,84 +1,84 @@
 .animated-div {
-    margin: 20px;
-    padding: 20px;
-  }
+  margin: 20px;
+  padding: 20px;
+}
 
-  .vertical{
-    display:flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: 20px;
-  }
+.vertical {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
 
-  img{
-    width:30vw;
-    height: auto;
-    border-radius: 20px 0 20px 0;
-    filter: brightness(1.2) contrast(0.8) saturate(1.5);
-    background: linear-gradient(to bottom, #fff, #ccc); 
-    border: 5px solid black;
-  }
+.play-pause-button img {
+  width: 30vw;
+  height: auto;
+  border-radius: 20px 0 20px 0;
+  filter: brightness(1.2) contrast(0.8) saturate(1.5);
+  background: linear-gradient(to bottom, #fff, #ccc);
+  border: 5px solid black;
+}
 
-  .appearedText{
+.appearedText {
   text-align: center;
   max-width: 50vw;
   font-size: 20px;
+}
+
+.appearedText h2 {
+  font-size: 40px;
+  font-weight: bolder;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.heading {
+  font-size: 3rem;
+  font-weight: bolder;
+  color: black;
+  text-align: center;
+  width: auto;
+}
+
+@media (max-width: 900px) {
+  .play-pause-button img {
+    width: 80vw;
+    height: auto;
   }
 
-  .appearedText h2{
-    font-size: 40px;
-    font-weight: bolder;
-    font-family:'Courier New', Courier, monospace;
+  .animated-div {
+    margin: 5px;
+    padding: 5px;
   }
 
-  .heading{
-    font-size:3rem;
-    font-weight: bolder;
-    color: black;
-    text-align: center;
+  .vertical {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .vertical.right {
+    flex-direction: column-reverse;
+  }
+
+  .heading {
+    font-size: larger;
+  }
+
+  .appearedText {
+    max-width: 100vw;
+    width: 100vw;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .appearedText h2 {
     width: auto;
   }
 
-  @media (max-width:900px){
-    img{
-      width: 80vw;
-      height: auto;
-    }
-
-    .animated-div{
-      margin: 5px;
-      padding: 5px;
-    }
-
-    .vertical{
-      flex-direction: column;
-      margin: 0;
-    }
-
-    .vertical.right{
-      flex-direction: column-reverse;
-    }
-
-    .heading{
-      font-size: larger;
-    }
-
-    .appearedText{
-      max-width: 100vw;
-      width: 100vw;
-      margin-left: 5px;
-      margin-right: 5px;
-    }
-
-    .appearedText h2{
-      width:auto;
-    }
-
-    .appearedText p{
-      font-size: smaller;
-      width: 100%;
-      margin-left: 5px;
-      margin-right: 5px;
-    }
+  .appearedText p {
+    font-size: smaller;
+    width: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
   }
+}
