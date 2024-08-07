@@ -9,11 +9,6 @@ function App() {
   return (
     <>
       <Header />
-      <Team />
-      <AboutUs />
-      <AnimatedCarousel />
-      <Verticals />
-      <ContactUs />
     </>
   );
 }

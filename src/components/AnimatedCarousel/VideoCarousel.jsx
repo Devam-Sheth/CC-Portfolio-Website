@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { highlightsSlides } from "./SlideInfo";
 import "./VideoCarousel.css";
-import playIcon from "/images/play2.png";
-import pauseIcon from "/images/pause2.png";
+import playIcon from "../../assets/images/play2.png";
+import pauseIcon from "../../assets/images/pause2.png";
 
 const VideoCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
