@@ -1,17 +1,29 @@
-.container{
-    background-image: url('../../assets/images/AboutUs.jpeg');
-    background-repeat: no-repeat; 
-    background-size: cover; 
-    padding: 3rem;
+.container {
+  background-image: url("../../assets/images/AboutUs.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-family: Cascadia Code, Fira Code, monospace;
 }
 
-.heading{
-    text-decoration: underline;
+.heading {
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
 }
-.para{
-    font-size: 18px;
-    padding-bottom: 3rem;
+
+h1.heading {
+  font-size: 1.5rem;
+  text-align: left;
 }
-.below{
-    font-size: 18px;
+
+.para {
+  font-size: 1.5rem;
+}
+
+p.below {
+  font-size: 1.5rem;
 }
