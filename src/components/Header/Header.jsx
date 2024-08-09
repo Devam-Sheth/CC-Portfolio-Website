@@ -2,12 +2,24 @@ import React from "react";
 import "./Header.css";
 import logo from "../../assets/images/Logo.png";
 import { Typewriter } from "react-simple-typewriter";
+import Tilt from "./Tilt";
 function Header() {
+
+  const tiltEffectSettings = {
+    max: 25,
+    perspective: 1000,
+    scale: 1.1,
+    speed: 500,
+    easing: "cubic-bezier(.03,.98,.52,.99)"
+  };
+
   return (
     <div className="header">
       <div className="header-content flex">
         <div className="logo">
-          <img src={logo} className="logo-img" alt="" />
+          <Tilt tiltEffectSettings={tiltEffectSettings}>
+            <img src={logo} className="logo-img" alt="" />
+          </Tilt>
           <div className="center">
             <h1 className="Mothercode">
               <Typewriter
