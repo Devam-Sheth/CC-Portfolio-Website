@@ -48,8 +48,8 @@ const [visible, setVisible] = useState(false);
         </div>
         <div className="center">
           <h3 className="anta">
-            { showQuote && 
-              <Typewriter words={["We code in the name of the Old Gods and the New","We are the Coding Club, we can do whatever the f**k we want"]} loop={0} cursor typeSpeed={50} deleteSpeed={40} delaySpeed={2000}  cursorStyle='|'  />}
+           { showQuote && 
+              <Typewriter words={["We code in the name of the Old Gods and the New","We are the Coding Club, we can do whatever the f**k we want"]} loop={0} cursor typeSpeed={50} deleteSpeed={40} delaySpeed={3000}  cursorStyle='|'  />}
          
            
           </h3>
