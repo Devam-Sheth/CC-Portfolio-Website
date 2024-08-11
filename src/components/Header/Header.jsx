@@ -3,7 +3,6 @@ import "./Header.css";
 import logo from "../../assets/images/Logo.png";
 import { Typewriter } from "react-simple-typewriter";
 import Tilt from "./Tilt";
-import { Howl } from 'react-howler';
 
 function Header() {
   const tiltEffectSettings = {
