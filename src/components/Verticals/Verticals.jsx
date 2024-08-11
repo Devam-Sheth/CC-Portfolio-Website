@@ -67,7 +67,7 @@ function Verticals() {
 
       <div className="vertical">
         <AnimatedDivLeft>
-          <img src="VidEd.jpeg" />
+          <img src="/VidEd.jpeg" />
         </AnimatedDivLeft>
         <AnimatedDivRight>
           <div className="appearedText right">
