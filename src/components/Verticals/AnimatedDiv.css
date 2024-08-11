@@ -14,8 +14,8 @@
   object-fit: cover; /* Ensures the image covers the container without distortion */
   border: 1px solid #ccc; /* normal border */
   border-radius: 4px;
-  box-shadow: inset 10px 10px 2px rgba(255, 0, 0, 0.4), /* glowing border */
-               10px 10px 8px rgba(255, 0, 0, 0.2); /* secondary glow */
+  box-shadow: inset 10px 10px 6px rgb(255, 0, 0), /* glowing border */
+               10px 10px 9px rgba(230, 7, 7, 0.347); /* secondary glow */
   border-radius: 20px;
 }
 
@@ -30,19 +30,68 @@
 }
 
 .vertical.right img{
-  box-shadow: inset -10px 10px 2px rgba(255, 0, 0, 0.4), /* glowing border */
-               -10px 10px 8px rgba(230, 7, 7, 0.347); /* secondary glow */
+  box-shadow: inset -10px 10px 6px rgb(255, 0, 0), /* glowing border */
+               -10px 10px 9px rgba(230, 7, 7, 0.347); /* secondary glow */
 }
 
 .appearedText {
   text-align: center;
   max-width: 50vw;
   font-size: 20px;
+  padding: 5px;
   height: 100%; /* Ensures the text container takes full height */
   display: flex; /* Allows children to use flexbox properties */
   flex-direction: column; /* Aligns text vertically */
   justify-content: center; /* Centers text vertically */
+  border: 2px solid rgb(255, 0, 0);
+  border-radius: 10px;
+  
+  
+  &:hover {
+      filter: contrast(1.1);
+  }
+  
+  &:active {
+      filter: contrast(0.9);
+  }
+  
+  &::before,
+  &::after {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      border: 2px solid rgb(255, 0, 0);
+      transition: all .5s;
+      animation: clippath 3s infinite linear;
+      border-radius: 10px;
+  }
+  
+  &::after {
+      animation: clippath 3s infinite -1.5s linear;
+  }
 }
+
+@keyframes clippath {
+  0%,
+  100% {
+      clip-path: inset(0 0 98% 0);
+  }
+  
+  25% {
+      clip-path: inset(0 98% 0 0);
+  }
+  50% {
+      clip-path: inset(98% 0 0 0);
+  }
+  75% {
+      clip-path: inset(0 0 0 98%);
+  }
+}
+
+
 
 .appearedText h2 {
   font-size: 40px;
@@ -82,8 +131,7 @@
   .appearedText {
     max-width: 100vw;
     width: 100vw;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin:5px;
   }
 
   .appearedText h2 {
