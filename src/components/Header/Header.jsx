@@ -14,7 +14,8 @@ function Header() {
     easing: "cubic-bezier(.03,.98,.52,.99)"
   };
 
-  const words = ["CODING CLUB", "Minimum Bugs, Maximum Effort!", "Compiling success...That's what I call a...Giggity!"];
+  const words = ["CODING CLUB", "Minimum Bugs, Maximum Effort!", "Compiling success...That's what I call a...Giggity!"]; 
+  
 
   return (
     <div className="header">
