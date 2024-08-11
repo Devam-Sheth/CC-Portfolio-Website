@@ -11,7 +11,7 @@ function Verticals() {
 
       <div className="vertical">
         <AnimatedDivLeft>
-          <img src="https://imgs.search.brave.com/NfLP5XMtbKSLTVM8ZcYCZlRRXtNWggttmpIusaq0GWA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTQy/MjI3Njc0MC92ZWN0/b3Ivc29mdHdhcmUt/ZGV2ZWxvcGVyLWZs/YXQtZGVzaWduLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz12/R0VGQ0Y0UEFFd0k3/Nmo5T1VwM1NBWmV3/TS15MkoyVVh3ZUVO/LTFuYjRFPQ" />
+          <img src="/FrontDev.png" />
         </AnimatedDivLeft>
         <AnimatedDivRight>
           <div className="appearedText right">
@@ -33,13 +33,13 @@ function Verticals() {
           </div>
         </AnimatedDivLeft>
         <AnimatedDivRight>
-          <img src="https://imgs.search.brave.com/NfLP5XMtbKSLTVM8ZcYCZlRRXtNWggttmpIusaq0GWA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTQy/MjI3Njc0MC92ZWN0/b3Ivc29mdHdhcmUt/ZGV2ZWxvcGVyLWZs/YXQtZGVzaWduLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz12/R0VGQ0Y0UEFFd0k3/Nmo5T1VwM1NBWmV3/TS15MkoyVVh3ZUVO/LTFuYjRFPQ" />
+          <img src="/BackDev.png" />
         </AnimatedDivRight>
       </div>
 
       <div className="vertical">
         <AnimatedDivLeft>
-          <img src="https://imgs.search.brave.com/NfLP5XMtbKSLTVM8ZcYCZlRRXtNWggttmpIusaq0GWA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTQy/MjI3Njc0MC92ZWN0/b3Ivc29mdHdhcmUt/ZGV2ZWxvcGVyLWZs/YXQtZGVzaWduLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz12/R0VGQ0Y0UEFFd0k3/Nmo5T1VwM1NBWmV3/TS15MkoyVVh3ZUVO/LTFuYjRFPQ" />
+          <img src="/CompCod.jpeg" />
         </AnimatedDivLeft>
         <AnimatedDivRight>
           <div className="appearedText right">
@@ -61,13 +61,13 @@ function Verticals() {
           </div>
         </AnimatedDivLeft>
         <AnimatedDivRight>
-          <img src="https://imgs.search.brave.com/NfLP5XMtbKSLTVM8ZcYCZlRRXtNWggttmpIusaq0GWA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTQy/MjI3Njc0MC92ZWN0/b3Ivc29mdHdhcmUt/ZGV2ZWxvcGVyLWZs/YXQtZGVzaWduLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz12/R0VGQ0Y0UEFFd0k3/Nmo5T1VwM1NBWmV3/TS15MkoyVVh3ZUVO/LTFuYjRFPQ" />
+          <img src="/Aiml.png" />
         </AnimatedDivRight>
       </div>
 
       <div className="vertical">
         <AnimatedDivLeft>
-          <img src="https://imgs.search.brave.com/NfLP5XMtbKSLTVM8ZcYCZlRRXtNWggttmpIusaq0GWA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTQy/MjI3Njc0MC92ZWN0/b3Ivc29mdHdhcmUt/ZGV2ZWxvcGVyLWZs/YXQtZGVzaWduLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz12/R0VGQ0Y0UEFFd0k3/Nmo5T1VwM1NBWmV3/TS15MkoyVVh3ZUVO/LTFuYjRFPQ" />
+          <img src="VidEd.jpeg" />
         </AnimatedDivLeft>
         <AnimatedDivRight>
           <div className="appearedText right">
@@ -89,13 +89,13 @@ function Verticals() {
           </div>
         </AnimatedDivLeft>
         <AnimatedDivRight>
-          <img src="https://imgs.search.brave.com/NfLP5XMtbKSLTVM8ZcYCZlRRXtNWggttmpIusaq0GWA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTQy/MjI3Njc0MC92ZWN0/b3Ivc29mdHdhcmUt/ZGV2ZWxvcGVyLWZs/YXQtZGVzaWduLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz12/R0VGQ0Y0UEFFd0k3/Nmo5T1VwM1NBWmV3/TS15MkoyVVh3ZUVO/LTFuYjRFPQ" />
+          <img src="AppDev.png" />
         </AnimatedDivRight>
       </div>
 
       <div className="vertical">
         <AnimatedDivLeft>
-          <img src="https://imgs.search.brave.com/NfLP5XMtbKSLTVM8ZcYCZlRRXtNWggttmpIusaq0GWA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTQy/MjI3Njc0MC92ZWN0/b3Ivc29mdHdhcmUt/ZGV2ZWxvcGVyLWZs/YXQtZGVzaWduLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz12/R0VGQ0Y0UEFFd0k3/Nmo5T1VwM1NBWmV3/TS15MkoyVVh3ZUVO/LTFuYjRFPQ" />
+          <img src="/GameDev.png" />
         </AnimatedDivLeft>
         <AnimatedDivRight>
           <div className="appearedText right">
