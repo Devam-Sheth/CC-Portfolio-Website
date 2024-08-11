@@ -1,5 +1,5 @@
 .container {
-  background-image: url("../../assets/images/AboutUs.jpeg");
+  background-color: black;
   background-repeat: no-repeat;
   background-size: cover;
   padding: 3rem;
@@ -16,15 +16,19 @@
   text-decoration: underline;
   text-underline-offset: 0.5rem;
   grid-column: 1 / span 2;
+  display: flex;
+  text-align: center;
+  justify-content: center;
 }
 
 h1.heading {
   font-size: 1.5rem;
   text-align: left;
+  color: white;
 }
 
 .para {
-  color: black;
+  color: white;
   font-size: 1.5rem;
 }
 
@@ -32,18 +36,3 @@ p.below {
   font-size: 1.5rem;
 }
 
-.content-with-logo {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-}
-
-.cc-logo {
-  align-self: center;
-  justify-self: center;
-  transition: all 0.5s;
-}
-
-.cc-logo:hover {
-  transform: scale(1.1);
-  cursor: pointer;
-}

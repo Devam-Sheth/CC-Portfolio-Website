@@ -26,6 +26,7 @@
   justify-content: center;
   margin: 20px;
   height: 100%; /* Makes the vertical container take full height */
+  font-family: "Mothercode";
 }
 
 .vertical.right img{
@@ -50,8 +51,10 @@
 }
 
 .heading {
+  font-family: "Mothercode";
   font-size: 3rem;
   font-weight: bolder;
+  letter-spacing: 0.3rem;
   color: black;
   text-align: center;
   width: auto;
