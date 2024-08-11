@@ -42,24 +42,24 @@ const Team = () => {
 
   const data = [
     {
-      name: "Manish Goyal",
-      role: "BOSM Joint Coordinator",
+      name: "Archit Garg",
+      role: "Secretary",
       image: bosm,
     },
     {
-      name: "Siddharth Khemani",
-      role: "Apogee Coordinator",
-      image: apogee,
-    },
-    {
-      name: "Parth Khandelwal",
-      role: "Oasis Coordinator",
-      image: oasis,
+      name: "Devam Sheth",
+      role: "Frontend Development Lead",
+      image: gameDev,
     },
     {
       name: "Ameesh Sethi",
       role: "Competitive Coding Lead",
       image: cc,
+    },
+    {
+      name: "Akshaj Rao",
+      role: "Backend Development Lead",
+      image: gameDev,
     },
     {
       name: "Manvendra Siwatch",
@@ -72,15 +72,16 @@ const Team = () => {
       image: gameDev,
     },
     {
-      name: "Devam Sheth",
-      role: "Frontend Development Lead",
-      image: gameDev,
+      name: "Parth Khandelwal",
+      role: "Oasis Coordinator",
+      image: oasis,
     },
     {
-      name: "Akshaj Rao",
-      role: "Backend Development Lead",
+      name: "Siddharth Khemani",
+      role: "Apogee Coordinator",
       image: gameDev,
     },
+    
   ];
 
   return (

@@ -23,5 +23,11 @@ export const highlightsSlides = [
       'not like us'
     ]
   },
+  {
+    textLists: [
+      'history geography sst.',
+      'not like us'
+    ]
+  },
   // Add more slides as needed
 ];
