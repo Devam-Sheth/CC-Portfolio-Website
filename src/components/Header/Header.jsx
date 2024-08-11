@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Header.css";
 import logo from "../../assets/images/Logo.png";
 import { Typewriter } from "react-simple-typewriter";
 import Tilt from "./Tilt";
-function Header() {
+import { Howl } from 'react-howler';
 
+function Header() {
   const tiltEffectSettings = {
     max: 25,
     perspective: 1000,
@@ -12,6 +13,8 @@ function Header() {
     speed: 500,
     easing: "cubic-bezier(.03,.98,.52,.99)"
   };
+
+  const words = ["CODING CLUB", "Minimum Bugs, Maximum Effort!", "Compiling success...That's what I call a...Giggity!"];
 
   return (
     <div className="header">
@@ -23,13 +26,14 @@ function Header() {
           <div className="center">
             <h1 className="Mothercode">
               <Typewriter
-                words={["CODING CLUB","We code in the name of the Old Gods and the New","Coffee's good proofing water. Tells you who's coding and who isn't"]}
+                words={words}
                 loop={false}
                 cursor
-                typeSpeed={200}
-                deleteSpeed={200}
-                delaySpeed={3000}
+                typeSpeed={100}
+                deleteSpeed={75}
+                delaySpeed={1000}
                 cursorStyle="_"
+                onType={() => setCurrentWordIndex(prev => prev + 1)} // Update currentWordIndex
               />
             </h1>
             <h2 className="poppins" style={{ margin: 0 }}>
@@ -43,3 +47,4 @@ function Header() {
 }
 
 export default Header;
+
