@@ -16,7 +16,7 @@
 .header {
   color: white;
   position: relative;
-  height: 100vh;
+  height: 90vh;
   width: 100%;
   /* background-image: url("../../assets/images/Header Background.png"); */
   /* background-size: cover; */
@@ -30,7 +30,7 @@
 
 .header-content {
   position: absolute;
-  top: 50%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -41,22 +41,21 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  width: 100%;
 }
 .center {
   text-align: center;
-  width: fit-content;
-  width: 27rem;
 }
 .logo {
   transform: translateY(-1rem);
   width: 100%;
-  max-width: 30rem;
   width: fit-content;
   display: flex;
   margin: auto;
   margin-top: 10%;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin-bottom: 0;
 }
 .logo-img {
@@ -81,12 +80,14 @@
   margin: 0;
   padding: 0;
 }
+
 .anta {
   font-family: "Anta", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: large;
 }
+
 
 @media screen and (max-width: 768px) {
   .header {
@@ -105,3 +106,4 @@
     width: 20rem;
   }
 }
+
