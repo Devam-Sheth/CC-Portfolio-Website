@@ -9,9 +9,14 @@
 }
 
 .animated-div img {
-  width: 100%; /* Makes the image take full width of its container */
-  height: 100%; /* Makes the image take full height of its container */
+  width: 40vw; /* Makes the image take full width of its container */
+  height: 30vh; /* Makes the image take full height of its container */
   object-fit: cover; /* Ensures the image covers the container without distortion */
+  border: 1px solid #ccc; /* normal border */
+  border-radius: 4px;
+  box-shadow: inset 10px 10px 2px rgba(255, 0, 0, 0.4), /* glowing border */
+               10px 10px 8px rgba(255, 0, 0, 0.2); /* secondary glow */
+  border-radius: 20px;
 }
 
 .vertical {
@@ -21,6 +26,11 @@
   justify-content: center;
   margin: 20px;
   height: 100%; /* Makes the vertical container take full height */
+}
+
+.vertical.right img{
+  box-shadow: inset -10px 10px 2px rgba(255, 0, 0, 0.4), /* glowing border */
+               -10px 10px 8px rgba(230, 7, 7, 0.347); /* secondary glow */
 }
 
 .appearedText {
