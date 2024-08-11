@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./ContactUs.css";
-
+import contactImg from "../../assets/images/contact-img.jpg";
 const ContactUs = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -25,56 +25,65 @@ const ContactUs = () => {
 
   return (
     <div>
-      <div className="contact-container">
-        <h2>Contact Us</h2>
-        <form onSubmit={handleSubmit} className="contact-form">
-          <div className="form-group">
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="mobile">Mobile Number</label>
-            <input
-              type="tel"
-              id="mobile"
-              name="mobile"
-              value={formData.mobile}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="message">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <button type="submit" className="submit-btn">
-            Send Message
-          </button>
-        </form>
+      <div className="contactus-container">
+        <div className="contact-container">
+          <h2>Contact Us</h2>
+          <form onSubmit={handleSubmit} className="contact-form">
+            <div className="form-group">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Name"
+                required
+                autoComplete="off"
+              />
+            </div>
+            <div className="form-group">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Email"
+                required
+                autoComplete="off"
+              />
+            </div>
+            <div className="form-group">
+              <input
+                type="tel"
+                id="mobile"
+                name="mobile"
+                value={formData.mobile}
+                onChange={handleChange}
+                placeholder="Mobile Number"
+                required
+                autoComplete="off"
+              />
+            </div>
+            <div className="form-group">
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Message"
+                required
+                autoComplete="off"
+              />
+            </div>
+            <button type="submit" className="submit-btn">
+              Send Message
+            </button>
+          </form>
+        </div>
+        <div className="image-container">
+          <img src={contactImg} alt="Contact" />
+        </div>
       </div>
 
       <div className="footer">
@@ -85,27 +94,13 @@ const ContactUs = () => {
         <div className="second">
           <a href="https://www.facebook.com/codingclubpilani/">
             <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
               width="30px"
               height="30px"
-              viewBox="-2 -2 24.00 24.00"
-              version="1.1"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              fill="#ffffff"
-              stroke="#ffffff"
+              fill="#8a2be2" // Purple color
             >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-              <g
-                id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></g>
-              <g id="SVGRepo_iconCarrier">
-                <path
-                  d="M335.821282,7259 L335.821282,7250 L338.553693,7250 L339,7246 L335.821282,7246 L335.821282,7244.052 C335.821282,7243.022 335.847593,7242 337.286884,7242 L338.744689,7242 L338.744689,7239.14 C338.744689,7239.097 337.492497,7239 336.225687,7239 C333.580004,7239 331.923407,7240.657 331.923407,7243.7 L331.923407,7246 L329,7246 L329,7250 L331.923407,7250 L331.923407,7259 L335.821282,7259 Z"
-                  id="facebook-[#b957e8]"
-                ></path>
-              </g>
+              <path d="M22 12.1c0-5.4-4.4-9.8-9.8-9.8S2.4 6.7 2.4 12.1c0 4.8 3.4 8.8 7.8 9.7v-6.9H6.7v-2.8h3.5V10.7c0-3.5 2.1-5.5 5.3-5.5 1.5 0 2.9.1 3.3.1v3.8h-2.3c-1.8 0-2.2.9-2.2 2.2v2.5h4.4l-.6 2.8h-3.8v6.9c4.4-.9 7.8-4.9 7.8-9.7z" />
             </svg>
           </a>
           <a href="https://github.com/CodingClubBITSP">
@@ -133,8 +128,8 @@ const ContactUs = () => {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M5.24871 3.99327C5.24871 2.8329 6.12883 2 7.17643 2C8.2244 2 9.0966 2.8329 9.0966 3.99327C9.0966 5.13841 8.2244 6 7.17643 6C6.12883 6 5.24871 5.13841 5.24871 3.99327ZM5.93076 9.59118H8.61173V20H5.93076V9.59118ZM10.0721 9.59118H12.7693V11.1227H12.8494C13.2201 10.5325 14.0953 9.69795 15.5852 9.69795C17.9132 9.69795 19.3251 11.5738 19.3251 14.1513V20H16.6441V14.5656C16.6441 13.6721 16.4542 12.6608 15.5831 12.6608C14.6993 12.6608 13.8774 13.7307 13.8774 14.8484V20H11.1964V14.3704C11.1964 13.0586 11.2421 11.8973 11.4426 11.2549C10.1614 10.6614 8.89347 9.75963 7.25647 9.75963C5.81259 9.75963 4.34751 10.5914 4.34751 13.5302V20H1.66454V14.1504C1.66454 11.3524 2.82282 9.59118 5.93076 9.59118Z"
                 fill="#b957e8"
               ></path>

@@ -18,6 +18,13 @@ function Header() {
                 deleteSpeed={200}
                 delaySpeed={3000}
                 cursorStyle="_"
+                options={{
+                  cursor: (
+                    <span style={{ fontWeight: "100", fontSize: "2rem" }}>
+                      _
+                    </span>
+                  ),
+                }}
               />
             </h1>
             <h2 className="poppins" style={{ margin: 0 }}>
