@@ -78,7 +78,7 @@ const Team = () => {
     },
     {
       name: "Siddharth Khemani",
-      role: "Apogee Coordinator",
+      role: "Apogee Coordinator, App Development Lead",
       image: gameDev,
     },
     
