@@ -40,22 +40,21 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  width: 100%;
 }
 .center {
   text-align: center;
-  width: fit-content;
-  width: 27rem;
 }
 .logo {
   transform: translateY(-1rem);
   width: 100%;
-  max-width: 30rem;
   width: fit-content;
   display: flex;
   margin: auto;
   margin-top: 10%;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin-bottom: 0;
 }
 .logo-img {

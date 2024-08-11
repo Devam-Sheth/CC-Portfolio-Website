@@ -23,7 +23,7 @@ function Header() {
           <div className="center">
             <h1 className="Mothercode">
               <Typewriter
-                words={["CODING CLUB"]}
+                words={["CODING CLUB","We code in the name of the Old Gods and the New","Coffee's good proofing water. Tells you who's coding and who isn't"]}
                 loop={false}
                 cursor
                 typeSpeed={200}
@@ -36,11 +36,6 @@ function Header() {
               BITS PILANI
             </h2>
           </div>
-        </div>
-        <div className="center">
-          <h3 className="anta">
-            We're the merc with a mouth, but with keyboards instead of katanas
-          </h3>
         </div>
       </div>
     </div>
