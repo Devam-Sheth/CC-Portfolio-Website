@@ -14,8 +14,9 @@ function Header() {
     easing: "cubic-bezier(.03,.98,.52,.99)"
   };
 
-  const words = ["CODING CLUB", "Minimum Bugs, Maximum Effort!", "Compiling success...That's what I call a...Giggity!"]; 
-  
+  const words = ["CODING CLUB BITS PILANI"]; 
+  const words1 = ["MINIMUM BUGS, MAXIMUM EFFORT!","COMPILED SUCCESSFULLY..THAT'S WHAT WE CALL A...GIGGITY!"]
+
 
   return (
     <div className="header">
@@ -28,17 +29,23 @@ function Header() {
             <h1 className="Mothercode">
               <Typewriter
                 words={words}
-                loop={false}
+                loop = {false}
                 cursor
-                typeSpeed={100}
-                deleteSpeed={75}
-                delaySpeed={1000}
+                typeSpeed={0}
+                deleteSpeed={0}
+                delaySpeed={0}
                 cursorStyle="_"
-                onType={() => setCurrentWordIndex(prev => prev + 1)} // Update currentWordIndex
               />
             </h1>
-            <h2 className="poppins" style={{ margin: 0 }}>
-              BITS PILANI
+            <h2 className="quotes" style={{ margin:0 }}>
+            <Typewriter
+            words={words1}
+            loop = {false}
+            cursor
+            typeSpeed={100}
+            deleteSpeed={75}
+            delaySpeed={500}
+            cursorStyle="_"/>
             </h2>
           </div>
         </div>
