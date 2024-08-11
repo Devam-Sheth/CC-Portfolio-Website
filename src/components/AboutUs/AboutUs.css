@@ -9,6 +9,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   font-family: Cascadia Code, Fira Code, monospace;
+  margin: 0;
 }
 
 .heading {
@@ -23,6 +24,7 @@ h1.heading {
 }
 
 .para {
+  color: black;
   font-size: 1.5rem;
 }
 

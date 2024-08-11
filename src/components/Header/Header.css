@@ -14,12 +14,13 @@
 }
 
 .header {
+  color: white;
   position: relative;
   height: 90vh;
   width: 100%;
-  background-image: url("../../assets/images/Header Background.png");
-  background-size: cover;
-  background-position: center;
+  /* background-image: url("../../assets/images/Header Background.png"); */
+  /* background-size: cover; */
+  /* background-position: center; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,8 +67,8 @@
 .Mothercode {
   font-family: "Mothercode";
   font-size: 3rem;
-  color: black;
   text-align: center;
+  letter-spacing: 0.3rem;
   margin: 0;
   padding: 0;
 }
@@ -93,6 +94,14 @@
   }
 }
 
+.anta {
+  font-family: "Anta", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: large;
+}
+
+
 @media screen and (max-width: 768px) {
   .header {
     height: 100vh;
@@ -109,11 +118,5 @@
   .center {
     width: 20rem;
   }
-}
-.anta {
-  font-family: "Anta", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: large;
 }
 
