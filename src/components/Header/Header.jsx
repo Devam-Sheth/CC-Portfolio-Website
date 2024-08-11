@@ -2,17 +2,14 @@ import React from "react";
 import "./Header.css";
 import { useState,useEffect } from "react";
 import logo from "../../assets/images/Logo.png";
-import { Typewriter } from 'react-simple-typewriter'
+import { Typewriter } from "react-simple-typewriter";
+import Tilt from "./Tilt";
 function Header() {
+
 const [visible, setVisible] = useState(false);
   const handleDone=()=>{
       setVisible(true)
   }
-  // useEffect(() => {
-    
-  
-  
-  // }, [])
  
     const [showHeading, setShowHeading] = useState(false);
     const [showQuote, setShowQuote] = useState(false);
@@ -31,14 +28,25 @@ const [visible, setVisible] = useState(false);
             clearTimeout(quoteTimer);
         } 
     }, []);
+
+  const tiltEffectSettings = {
+    max: 25,
+    perspective: 1000,
+    scale: 1.1,
+    speed: 500,
+    easing: "cubic-bezier(.03,.98,.52,.99)"
+  };
+
   return (
     <div className="header">
       <div className="header-content flex">
         <div className="logo">
-          <img src={logo} className="logo-img" alt="" />
+          <Tilt tiltEffectSettings={tiltEffectSettings}>
+            <img src={logo} className="logo-img" alt="" />
+          </Tilt>
           <div className="center">
             <h1 className="Mothercode">
-            <Typewriter words={["CODING CLUB"]} loop={1}  typeSpeed={100} deleteSpeed={50} delaySpeed={2000}  cursorStyle='|' onLoopDone={handleDone}/>
+            <Typewriter words={["CODING CLUB"]} loop={1}  typeSpeed={100} deleteSpeed={50} delaySpeed={2000}  cursorStyle='_' onLoopDone={handleDone}/>
                 </h1>
         {   showHeading &&
             <h2  className="poppins" style={{margin:0}}> <Typewriter words={["BITS PILANI"]} loop={1}  typeSpeed={100} deleteSpeed={50} delaySpeed={2000}  cursorStyle='|'  /></h2>
@@ -55,10 +63,6 @@ const [visible, setVisible] = useState(false);
           </h3>
         </div>
       </div>
-
-      {/* <div className='center'>
-        <h3>We're the merc with a mouth, but with keyboards instead of katanas</h3>
-        </div> */}
     </div>
   );
 }

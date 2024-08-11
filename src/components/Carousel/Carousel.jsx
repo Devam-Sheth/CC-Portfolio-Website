@@ -1,52 +1,99 @@
-import React, { useState, useRef, useEffect } from "react";
-import gsap from "gsap";
-import "./Carousel.css"; // Import CSS for styling
+// Carousel.js
+import React, { useState, useEffect, useRef } from "react";
+import "./Carousel.css";
+
+const slides = [
+  { text: "Slide 1" },
+  { text: "Slide 2" },
+  { text: "Slide 3" },
+  // Add more slides as needed
+];
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const slideRef = useRef(null);
+  const [progressWidth, setProgressWidth] = useState("0%");
+  const progressRef = useRef(null);
+  const intervalRef = useRef(null);
 
-  useEffect(() => {
-    gsap.to(slideRef.current, {
-      x: `-${currentIndex * 100}%`,
-      duration: 0.5,
-      ease: "power2.inOut",
-    });
-  }, [currentIndex]);
-
+  // Function to go to the next slide
   const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % 4); // Assume 4 slides for this example
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
+    resetProgress();
   };
 
-  const goToPrevious = () => {
+  // Function to go to the previous slide
+  const goToPrev = () => {
     setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + 4) % 4 // Assume 4 slides for this example
+      (prevIndex) => (prevIndex - 1 + slides.length) % slides.length
     );
+    resetProgress();
   };
 
-  const colors = ["#FF6F61", "#6B5B95", "#88B04B", "#F7CAC9"]; // Define colors for slides
+  // Function to reset progress
+  const resetProgress = () => {
+    setProgressWidth("0%");
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  };
+
+  // Set up the automatic slide change and progress bar update
+  useEffect(() => {
+    // Reset progress on slide change
+    resetProgress();
+
+    // Start progress update
+    const startTime = Date.now();
+    const updateProgress = () => {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min((elapsed / 5000) * 100, 100); // 5 seconds
+      setProgressWidth(`${progress}%`);
+
+      if (progress >= 100) {
+        goToNext();
+      }
+    };
+
+    intervalRef.current = setInterval(updateProgress, 100); // Update progress every 100ms
+
+    return () => {
+      clearInterval(intervalRef.current); // Cleanup on component unmount
+    };
+  }, [currentIndex]);
 
   return (
     <div className="carousel">
-      <button className="carousel-control prev" onClick={goToPrevious}>
-        &lt;
+      <button className="carousel-button prev" onClick={goToPrev}>
+        <i className="fas fa-chevron-left"></i>
       </button>
-      <div className="carousel-slide-container">
-        <div className="carousel-slide" ref={slideRef}>
-          {colors.map((color, index) => (
-            <div
-              className="carousel-item"
+      <div className="carousel-content">
+        <div className="carousel-text">{slides[currentIndex].text}</div>
+      </div>
+      <button className="carousel-button next" onClick={goToNext}>
+        <i className="fas fa-chevron-right"></i>
+      </button>
+      <div className="carousel-dots">
+        <div className="dot-container">
+          {slides.map((_, index) => (
+            <span
               key={index}
-              style={{ backgroundColor: color }}
+              className={`dot ${index === currentIndex ? "active" : ""}`}
+              onClick={() => {
+                setCurrentIndex(index);
+                resetProgress();
+              }}
             >
-              <p className="carousel-text">Slide {index + 1}</p>
-            </div>
+              {index === currentIndex ? (
+                <span
+                  className="active-dot-inner"
+                  style={{ width: progressWidth }}
+                ></span>
+              ) : null}
+            </span>
           ))}
         </div>
       </div>
-      <button className="carousel-control next" onClick={goToNext}>
-        &gt;
-      </button>
     </div>
   );
 };

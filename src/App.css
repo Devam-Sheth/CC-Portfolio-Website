@@ -2,7 +2,11 @@
   box-sizing: border-box;
 }
 
-body,html {
+body,
+html,
+#root,
+.App {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
