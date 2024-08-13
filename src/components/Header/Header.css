@@ -73,25 +73,13 @@
   padding: 0;
 }
 .quotes {
-  font-family: "Gantari", sans-serif;
+  font-family: "Mothercode";
   font-size: 2rem;
   text-align: center;
   margin-top: 5%;
+  letter-spacing: 0.3rem;
   padding: 0;
-  animation-name: glow;
-  animation-duration: 0.01s;
-  animation-iteration-count: infinite;
-}
-
-@keyframes glow {
-  0% {
-    text-shadow: 0 0 10px black;
-    color: red;
-  }
-  100% {
-    text-shadow: 0 0 5px black;
-    color: red;
-  }
+  color: #ff3131;
 }
 
 .anta {
