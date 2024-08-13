@@ -1,12 +1,12 @@
-// Carousel.js
 import React, { useState, useEffect, useRef } from "react";
 import "./Carousel.css";
 
 const slides = [
-  { text: "Slide 1" },
-  { text: "Slide 2" },
-  { text: "Slide 3" },
-  // Add more slides as needed
+  { heading: "Heading 1", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " },
+  { heading: "Heading 2", content: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." },
+  { heading: "Heading 3", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " },
+  { heading: "Heading 4", content: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." },
+  
 ];
 
 const Carousel = () => {
@@ -68,7 +68,8 @@ const Carousel = () => {
         <i className="fas fa-chevron-left"></i>
       </button>
       <div className="carousel-content">
-        <div className="carousel-text">{slides[currentIndex].text}</div>
+        <div className="carousel-heading">{slides[currentIndex].heading}</div>
+        <div className="carousel-text">{slides[currentIndex].content}</div>
       </div>
       <button className="carousel-button next" onClick={goToNext}>
         <i className="fas fa-chevron-right"></i>
