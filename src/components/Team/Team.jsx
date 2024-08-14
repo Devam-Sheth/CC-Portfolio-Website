@@ -27,62 +27,96 @@ import {
   useSphericalJoint,
 } from "@react-three/rapier";
 import { MeshLineGeometry, MeshLineMaterial } from "meshline";
-import { useControls } from "leva";
+import gsap from "gsap";
+import { useLoader } from "@react-three/fiber";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 extend({ MeshLineGeometry, MeshLineMaterial });
-useGLTF.preload("../public/card.glb");
-useTexture.preload("../public/band.png");
 
 const Team = () => {
-  const [expandedIndex, setExpandedIndex] = useState(null);
-
-  const handleClick = (index) => {
-    setExpandedIndex(expandedIndex === index ? null : index);
-  };
-
   const data = [
     {
       name: "Archit Garg",
       role: "Secretary",
       image: bosm,
+      modelPath: "/secretary.glb",
     },
     {
       name: "Devam Sheth",
       role: "Frontend Development Lead",
       image: gameDev,
+      modelPath: "/frontend.glb",
     },
     {
       name: "Ameesh Sethi",
       role: "Competitive Coding Lead",
       image: cc,
+      modelPath: "/cp.glb",
     },
     {
       name: "Akshaj Rao",
       role: "Backend Development Lead",
       image: gameDev,
+      modelPath: "/backend.glb",
     },
     {
       name: "Manvendra Siwatch",
       role: "AI/ML lead",
       image: ai,
+      modelPath: "/ai-ml.glb",
     },
     {
       name: "Aditya Garg",
       role: "Game Development Lead",
       image: gameDev,
+      modelPath: "/gamedev.glb",
     },
     {
       name: "Parth Khandelwal",
       role: "Oasis Coordinator",
       image: oasis,
+      modelPath: "/oasis.glb",
     },
     {
       name: "Siddharth Khemani",
       role: "Apogee Coordinator, App Development Lead",
       image: gameDev,
+      modelPath: "/apogee.glb",
     },
-    
+    {
+      name: "Manish Goyal",
+      role: "BOSM Joint Coordinator",
+      image: gameDev,
+      modelPath: "/bosm.glb",
+    },
   ];
+  const [expandedIndex, setExpandedIndex] = useState(null);
+  const [selectedModel, setSelectedModel] = useState("/secretary.glb");
+  const sectionRef = useRef(null);
+  const [modelLoaded, setModelLoaded] = useState(false);
+
+  const handleClick = (index) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+    if (data[index].modelPath) {
+      setSelectedModel(data[index].modelPath);
+    }
+  };
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: "top bottom", // Trigger when top of the section hits bottom of viewport
+        end: "bottom top", // Optional: when the section is out of view
+        onEnter: () => setModelLoaded(true), // Load model on scroll into view
+        onLeave: () => setModelLoaded(false), // Optional: unload model when out of view
+      });
+    });
+
+    return () => ctx.revert(); // Clean up on component unmount
+  }, []);
 
   return (
     <div className="team">
@@ -111,51 +145,56 @@ const Team = () => {
             ))}
           </div>
         </div>
-        <div className="team-card">
-          <Canvas camera={{ position: [0, 0, 13], fov: 25 }}>
-            <ambientLight intensity={Math.PI} />
-            <Physics interpolate gravity={[0, -40, 0]} timeStep={1 / 60}>
-              <Band />
-            </Physics>
-            <Environment background blur={0.75}>
-              <color attach="background" args={["black"]} />
-              <Lightformer
-                intensity={2}
-                color="white"
-                position={[0, -1, 5]}
-                rotation={[0, 0, Math.PI / 3]}
-                scale={[100, 0.1, 1]}
-              />
-              <Lightformer
-                intensity={3}
-                color="white"
-                position={[-1, -1, 1]}
-                rotation={[0, 0, Math.PI / 3]}
-                scale={[100, 0.1, 1]}
-              />
-              <Lightformer
-                intensity={3}
-                color="white"
-                position={[1, 1, 1]}
-                rotation={[0, 0, Math.PI / 3]}
-                scale={[100, 0.1, 1]}
-              />
-              <Lightformer
-                intensity={10}
-                color="white"
-                position={[-10, 0, 14]}
-                rotation={[0, Math.PI / 2, Math.PI / 3]}
-                scale={[100, 10, 1]}
-              />
-            </Environment>
-          </Canvas>
+        <div className="team-card" ref={sectionRef}>
+          {modelLoaded && (
+            <Canvas
+              key={selectedModel}
+              camera={{ position: [0, 0, 13], fov: 25 }}
+            >
+              <ambientLight intensity={Math.PI} />
+              <Physics interpolate gravity={[0, -40, 0]} timeStep={1 / 60}>
+                {selectedModel && <Band modelPath={selectedModel} />}
+              </Physics>
+              <Environment background blur={0.75}>
+                <color attach="background" args={["black"]} />
+                <Lightformer
+                  intensity={2}
+                  color="white"
+                  position={[0, -1, 5]}
+                  rotation={[0, 0, Math.PI / 3]}
+                  scale={[100, 0.1, 1]}
+                />
+                <Lightformer
+                  intensity={3}
+                  color="white"
+                  position={[-1, -1, 1]}
+                  rotation={[0, 0, Math.PI / 3]}
+                  scale={[100, 0.1, 1]}
+                />
+                <Lightformer
+                  intensity={3}
+                  color="white"
+                  position={[1, 1, 1]}
+                  rotation={[0, 0, Math.PI / 3]}
+                  scale={[100, 0.1, 1]}
+                />
+                <Lightformer
+                  intensity={10}
+                  color="white"
+                  position={[-10, 0, 14]}
+                  rotation={[0, Math.PI / 2, Math.PI / 3]}
+                  scale={[100, 10, 1]}
+                />
+              </Environment>
+            </Canvas>
+          )}
         </div>
       </div>
     </div>
   );
 };
 
-function Band({ maxSpeed = 50, minSpeed = 10 }) {
+function Band({ modelPath, maxSpeed = 50, minSpeed = 10 }) {
   const band = useRef(),
     fixed = useRef(),
     j1 = useRef(),
@@ -173,10 +212,15 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
     angularDamping: 2,
     linearDamping: 2,
   };
-  const { nodes, materials } = useGLTF(
-    "https://assets.vercel.com/image/upload/contentful/image/e5382hct74si/5huRVDzcoDwnbgrKUo1Lzs/53b6dd7d6b4ffcdbd338fa60265949e1/tag.glb"
-  );
-  const texture = useTexture("../public/band.png");
+
+  const texture = useTexture("/band.jpg");
+
+  const { nodes, materials } = useLoader(GLTFLoader, modelPath, (loader) => {
+    loader.manager.onError = (url) => {
+      console.error(`Error loading ${url}`);
+    };
+  });
+
   const { width, height } = useThree((state) => state.size);
   const [curve] = useState(
     () =>
@@ -190,17 +234,17 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
   const [dragged, drag] = useState(false);
   const [hovered, hover] = useState(false);
 
-  useRopeJoint(fixed, j1, [[0, 0, 0], [0, 0, 0], 1]) // prettier-ignore
-  useRopeJoint(j1, j2, [[0, 0, 0], [0, 0, 0], 1]) // prettier-ignore
-  useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], 1]) // prettier-ignore
-  useSphericalJoint(j3, card, [[0, 0, 0], [0, 1.45, 0]]) // prettier-ignore
+  useRopeJoint(fixed, j1, [[0, 0, 0], [0, 0, 0], 1]);
+  useRopeJoint(j1, j2, [[0, 0, 0], [0, 0, 0], 1]);
+  useRopeJoint(j2, j3, [[0, 0, 0], [0, 0, 0], 1]);
+  useSphericalJoint(j3, card, [
+    [0, 0, 0],
+    [0, 1.45, 0],
+  ]);
 
   useEffect(() => {
-    if (hovered) {
-      document.body.style.cursor = dragged ? "grabbing" : "grab";
-      return () => void (document.body.style.cursor = "auto");
-    }
-  }, [hovered, dragged]);
+    console.log(materials.base?.map);
+  }, [materials]);
 
   useFrame((state, delta) => {
     if (dragged) {
@@ -215,7 +259,6 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
       });
     }
     if (fixed.current) {
-      // Fix most of the jitter when over pulling the card
       [j1, j2].forEach((ref) => {
         if (!ref.current.lerped)
           ref.current.lerped = new THREE.Vector3().copy(
@@ -230,13 +273,11 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
           delta * (minSpeed + clampedDistance * (maxSpeed - minSpeed))
         );
       });
-      // Calculate catmul curve
       curve.points[0].copy(j3.current.translation());
       curve.points[1].copy(j2.current.lerped);
       curve.points[2].copy(j1.current.lerped);
       curve.points[3].copy(fixed.current.translation());
       band.current.geometry.setPoints(curve.getPoints(32));
-      // Tilt it back towards the screen
       ang.copy(card.current.angvel());
       rot.copy(card.current.rotation());
       card.current.setAngvel({ x: ang.x, y: ang.y - rot.y * 0.25, z: ang.z });
@@ -285,7 +326,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
           >
             <mesh geometry={nodes.card.geometry}>
               <meshPhysicalMaterial
-                map={materials.base.map}
+                map={materials.base?.map} // Ensure the map is set
                 map-anisotropy={16}
                 clearcoat={1}
                 clearcoatRoughness={0.15}
@@ -309,7 +350,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
           depthTest={false}
           resolution={[width, height]}
           useMap
-          map={texture}
+          map={texture} // Apply the texture here
           repeat={[-3, 1]}
           lineWidth={1}
         />

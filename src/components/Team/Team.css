@@ -1,22 +1,29 @@
 .team {
   display: flex;
   flex-direction: column;
+  padding-left: 1rem;
 }
 
 .team-cont {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 1rem; /* Optional: adds space between grid items */
 }
 
 .team-head {
   color: #e0e0e0;
   text-align: center;
   margin: 1.3rem;
+  font-family: Mothercode;
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
+  font-size: 1.5rem;
 }
 
 .team-container {
   padding: 5rem 3rem;
   font-family: Poppins, Arial, sans-serif;
+  height: 100vh; /* Set height to viewport height to ensure it fills the screen */
 }
 
 .team-member {
@@ -27,6 +34,7 @@
   padding: 0.6rem;
   transition: background-color 0.3s;
   width: 20rem;
+  /* Ensure the cards expand properly in mobile view */
 }
 
 .team-member:hover {
@@ -47,9 +55,10 @@
 
 .por-image {
   width: 6.3rem;
-  height: auto;
-  border-radius: 0.3rem;
+  height: 6.3rem; /* Ensure image height matches width for circular shape */
+  border-radius: 50%; /* Make image circular */
   margin-top: 0.6rem;
+  object-fit: cover; /* Ensure image covers the area without distortion */
 }
 
 .social-media-handles img {
@@ -61,11 +70,35 @@
 }
 
 .team-card {
-  margin-top: 1.3rem;
-  height: 50rem;
+  height: 100%; /* Make sure the .team-card fills its parent's height */
+  display: flex; /* Use flex to center the Canvas */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
 }
 
-h1,
-p {
-  color: #ddd;
+/* Responsive Design */
+@media (max-width: 768px) {
+  .team-cont {
+    display: flex; /* Change to flex for horizontal centering */
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    gap: 1rem; /* Space between items */
+  }
+
+  .team-card {
+    display: none; /* Hide the 3D element */
+  }
+
+  .team-member {
+    width: 90%; /* Full width for mobile */
+    max-width: 400px; /* Maximum width to ensure it's not too large */
+    margin-bottom: 1rem; /* Adjust spacing for mobile */
+    /* Ensure card expands properly */
+    flex-grow: 1; /* Allow the card to expand */
+  }
+
+  .team-container {
+    height: min-content;
+    padding: 2rem; /* Reduce padding for mobile */
+  }
 }
