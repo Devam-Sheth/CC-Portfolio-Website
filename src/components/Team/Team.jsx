@@ -108,19 +108,18 @@ const Team = () => {
     const ctx = gsap.context(() => {
       ScrollTrigger.create({
         trigger: sectionRef.current,
-        start: "top bottom", // Trigger when top of the section hits bottom of viewport
-        end: "bottom top", // Optional: when the section is out of view
-        onEnter: () => setModelLoaded(true), // Load model on scroll into view
-        onLeave: () => setModelLoaded(false), // Optional: unload model when out of view
+        start: "top bottom",
+        end: "bottom top",
+        onEnter: () => setModelLoaded(true),
       });
     });
 
-    return () => ctx.revert(); // Clean up on component unmount
+    return () => ctx.revert();
   }, []);
 
   return (
     <div className="team">
-      <h1 className="team-head">MEET THE TEAM!</h1>
+      <h1 className="team-head">MEET THE TEAM</h1>
       <div className="team-cont">
         <div className="team-container">
           <div className="team">
@@ -326,7 +325,7 @@ function Band({ modelPath, maxSpeed = 50, minSpeed = 10 }) {
           >
             <mesh geometry={nodes.card.geometry}>
               <meshPhysicalMaterial
-                map={materials.base?.map} // Ensure the map is set
+                map={materials.base?.map}
                 map-anisotropy={16}
                 clearcoat={1}
                 clearcoatRoughness={0.15}
@@ -350,7 +349,7 @@ function Band({ modelPath, maxSpeed = 50, minSpeed = 10 }) {
           depthTest={false}
           resolution={[width, height]}
           useMap
-          map={texture} // Apply the texture here
+          map={texture}
           repeat={[-3, 1]}
           lineWidth={1}
         />
