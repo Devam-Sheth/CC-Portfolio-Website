@@ -9,12 +9,14 @@ function Header() {
     perspective: 1000,
     scale: 1.1,
     speed: 500,
-    easing: "cubic-bezier(.03,.98,.52,.99)"
+    easing: "cubic-bezier(.03,.98,.52,.99)",
   };
 
-  const words = ["CODING CLUB BITS PILANI"]; 
-  const words1 = ["MINIMUM BUGS, MAXIMUM EFFORT!","COMPILED SUCCESSFULLY..THAT'S WHAT WE CALL A...GIGGITY!"]
-
+  const words = ["CODING CLUB BITS PILANI"];
+  const words1 = [
+    "MINIMUM BUGS, MAXIMUM EFFORT!",
+    "COMPILED SUCCESSFULLY..THAT'S WHAT WE CALL A...GIGGITY!",
+  ];
 
   return (
     <div className="header">
@@ -25,7 +27,7 @@ function Header() {
             <h1 className="Mothercode">
               <Typewriter
                 words={words}
-                loop = {false}
+                loop={false}
                 cursor
                 typeSpeed={0}
                 deleteSpeed={0}
@@ -33,15 +35,16 @@ function Header() {
                 cursorStyle="_"
               />
             </h1>
-            <h2 className="quotes" style={{ margin:0 }}>
-            <Typewriter
-            words={words1}
-            loop = {false}
-            cursor
-            typeSpeed={100}
-            deleteSpeed={75}
-            delaySpeed={500}
-            cursorStyle="_"/>
+            <h2 className="quotes" style={{ margin: 0 }}>
+              <Typewriter
+                words={words1}
+                loop={false}
+                cursor
+                typeSpeed={100}
+                deleteSpeed={75}
+                delaySpeed={500}
+                cursorStyle="_"
+              />
             </h2>
           </div>
         </div>
@@ -51,4 +54,3 @@ function Header() {
 }
 
 export default Header;
-

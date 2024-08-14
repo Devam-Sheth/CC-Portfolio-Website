@@ -79,7 +79,7 @@
   margin-top: 5%;
   letter-spacing: 0.3rem;
   padding: 0;
-  color:  #FF3131;
+  color: #ff3131;
 }
 
 .anta {
@@ -88,7 +88,6 @@
   font-style: normal;
   font-size: large;
 }
-
 
 @media screen and (max-width: 768px) {
   .header {
@@ -107,6 +106,7 @@
     width: 20rem;
   }
 }
+
 
 @media screen and (max-width: 500px) {
   .header {
