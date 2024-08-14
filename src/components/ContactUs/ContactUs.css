@@ -153,3 +153,114 @@
 #message {
   resize: none;
 }
+@media (max-width: 1024px) {
+  .contactus-container {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .contact-container {
+    margin-inline: 2rem;
+  }
+
+  .image-container img {
+    padding-right: 0;
+  }
+
+  .contact-container h2 {
+    padding-left: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .contact-form {
+    padding-inline: 1rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .submit-btn {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .footer .second a {
+    margin: 0.5rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    margin-inline: 1rem;
+  }
+
+  .contact-container h2 {
+    padding-left: 0;
+    font-size: 1.3rem;
+  }
+
+  .contact-form {
+    padding-inline: 0.5rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  .submit-btn {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .footer {
+    padding: 0.5rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .contactus-container {
+    padding: 0.5rem;
+  }
+
+  .contact-container {
+    margin-inline: 0.5rem;
+  }
+
+  .contact-container h2 {
+    padding-left: 0;
+    font-size: 1.2rem;
+  }
+
+  .contact-form {
+    padding-inline: 0.5rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .submit-btn {
+    padding: 0.7rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .footer {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+}

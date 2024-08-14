@@ -11,6 +11,32 @@
   background-color: black;
   overflow: hidden;
   border-radius: 25px;
+  color: white;
+  font-family: 'Mothercode', sans-serif;
+
+}
+.carousel-content {
+  flex: 1;
+  width: 100%;
+  height: 60vh;
+  text-align: center;
+  z-index: 2; /* Ensure content is on top */
+  padding: 1rem; /* Add some padding */
+}
+
+.carousel-heading {
+  font-size: 2rem; /* Adjust heading size */
+  margin-bottom: 0.8rem; /* Space between heading and content */
+  color: white; /* Ensure heading is white */
+  text-decoration: underline;
+}
+
+.carousel-text {
+  color: white;
+  z-index: 2; /* Make sure text is on top */
+  position: relative; /* Ensure positioning works */
+  padding: 2.3rem;
+  font-family: Cascadia Code, Fira Code, monospace;
 }
 
 .carousel::before{
@@ -22,6 +48,7 @@
   background-color: #FF3131;
   box-shadow: 0 0 20px rgb(8,8,8);
   animation: animate 6s linear infinite;
+  z-index: 1;
 }
 
 .carousel::after{
@@ -30,6 +57,7 @@
   inset: 5px;
   background-color: black;
   border-radius: 20px;
+  z-index: 1;
 }
 
 @keyframes animate{
@@ -45,15 +73,16 @@
 .carousel-button {
   position: absolute;
   top: 50%;
-  background: red;
+  background: white;
   border: none;
   cursor: pointer;
-  z-index: 1;
+  z-index: 3;
   width: 40px; /* Adjust size of the button */
   height: 40px; /* Adjust size of the button */
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 50%;
 }
 
 .prev {
@@ -74,11 +103,11 @@
   width: 100%;
   height: 60vh;
   text-align: center;
+  z-index: 2;
 }
 
 .carousel-text {
-  font-size: 1.5rem;
-  color: blue;
+  font-size: 1.2rem;
 }
 
 .carousel-dots {
@@ -90,6 +119,7 @@
   justify-content: center;
   padding: 0;
   margin: 0;
+  z-index: 2;
 }
 
 .dot-container {
@@ -102,7 +132,7 @@
 .dot {
   width: 10px;
   height: 10px;
-  background-color:blue;
+  background-color:white;
   border-radius: 50%;
   transition: background-color 0.3s, width 0.3s;
 }

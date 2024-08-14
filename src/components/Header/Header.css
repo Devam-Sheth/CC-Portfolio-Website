@@ -106,3 +106,29 @@
     width: 20rem;
   }
 }
+
+
+@media screen and (max-width: 500px) {
+  .header {
+    height: 100vh;
+  }
+  .logo {
+    margin-top: 20%;
+  }
+  .logo img {
+    height: 35vh;
+    width: 35vh;
+  }
+  .Mothercode {
+    font-size: 1rem;
+  }
+  .poppins {
+    font-size: 1rem;
+  }
+  .center {
+    width: 20rem;
+  }
+  .quotes{
+    font-size: 1rem;
+  }
+}
