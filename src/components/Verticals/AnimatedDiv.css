@@ -10,7 +10,7 @@
 
 .animated-div img {
   width: 40vw; /* Makes the image take full width of its container */
-  height: 30vh; /* Makes the image take full height of its container */
+  height: 40vh; /* Makes the image take full height of its container */
   object-fit: cover; /* Ensures the image covers the container without distortion */
   border: 1px solid #ccc; /* normal border */
   border-radius: 4px;
@@ -109,7 +109,7 @@
   width: auto;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 800px) {
   .animated-div {
     margin: 5px;
     padding: 5px;
@@ -148,5 +148,13 @@
     width: 100%;
     margin-left: 5px;
     margin-right: 5px;
+  }
+
+  .animated-div img{
+    box-shadow: none;
+  }
+
+  .vertical.right img{
+    box-shadow: none;
   }
 }

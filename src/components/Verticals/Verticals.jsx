@@ -11,7 +11,7 @@ function Verticals() {
 
       <div className="vertical">
         <AnimatedDivLeft>
-          <img src="/FrontDev.png" />
+          <img src="https://images.unsplash.com/photo-1699885960867-56d5f5262d38?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZnJvbnQlMjBlbmQlMjBkZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D%3D" />
         </AnimatedDivLeft>
         <AnimatedDivRight>
           <div className="appearedText right">
@@ -33,13 +33,13 @@ function Verticals() {
           </div>
         </AnimatedDivLeft>
         <AnimatedDivRight>
-          <img src="/BackDev.png" />
+          <img src="https://img.freepik.com/free-photo/it-specialist-checking-code-computer-dark-office-night_1098-18699.jpg?size=626&ext=jpg" />
         </AnimatedDivRight>
       </div>
 
       <div className="vertical">
         <AnimatedDivLeft>
-          <img src="/CompCod.jpeg" />
+          <img src="https://th.bing.com/th/id/OIG4.QR8PjwMwKHOQjPHmGO1x?w=1024&h=1024&rs=1&pid=ImgDetMain" />
         </AnimatedDivLeft>
         <AnimatedDivRight>
           <div className="appearedText right">
@@ -61,13 +61,13 @@ function Verticals() {
           </div>
         </AnimatedDivLeft>
         <AnimatedDivRight>
-          <img src="/Aiml.png" />
+          <img src="https://th.bing.com/th/id/OIG3.4Lv8G3IRIOVSZ_OoiMan?pid=ImgGn" />
         </AnimatedDivRight>
       </div>
 
       <div className="vertical">
         <AnimatedDivLeft>
-          <img src="/VidEd.jpeg" />
+          <img src="https://th.bing.com/th/id/OIG3.kwFWgtrn3w8JsWAfLlBM?w=1024&h=1024&rs=1&pid=ImgDetMain" />
         </AnimatedDivLeft>
         <AnimatedDivRight>
           <div className="appearedText right">
@@ -89,13 +89,13 @@ function Verticals() {
           </div>
         </AnimatedDivLeft>
         <AnimatedDivRight>
-          <img src="AppDev.png" />
+          <img src="https://th.bing.com/th/id/OIG3.dMLTLpjdxIDJz15A9ArO?w=1024&h=1024&rs=1&pid=ImgDetMain" />
         </AnimatedDivRight>
       </div>
 
       <div className="vertical">
         <AnimatedDivLeft>
-          <img src="/GameDev.png" />
+          <img src="https://th.bing.com/th/id/OIG4.6ucBRWxK3r00s5.4Z138?pid=ImgGn" />
         </AnimatedDivLeft>
         <AnimatedDivRight>
           <div className="appearedText right">
