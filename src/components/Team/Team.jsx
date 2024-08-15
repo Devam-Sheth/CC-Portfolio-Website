@@ -12,12 +12,7 @@ import instagramLogo from "../../assets/images/instagram.png";
 import { Collapse } from "react-collapse";
 import * as THREE from "three";
 import { Canvas, extend, useThree, useFrame } from "@react-three/fiber";
-import {
-  useGLTF,
-  useTexture,
-  Environment,
-  Lightformer,
-} from "@react-three/drei";
+import { useTexture, Environment, Lightformer } from "@react-three/drei";
 import {
   BallCollider,
   CuboidCollider,
