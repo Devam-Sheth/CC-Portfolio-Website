@@ -1,11 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./Team.css";
-import ai from "../../assets/images/AIML Lead.jpeg";
-import apogee from "../../assets/images/Apooge Coord.jpeg";
-import bosm from "../../assets/images/BOSM Joint Coord.jpeg";
-import cc from "../../assets/images/Competitive Coding Lead.jpeg";
-import gameDev from "../../assets/images/Game Dev POR.jpeg";
-import oasis from "../../assets/images/Oasis Coord.jpeg";
 import githubLogo from "../../assets/images/github.png";
 import linkedinLogo from "../../assets/images/linkedin.png";
 import instagramLogo from "../../assets/images/instagram.png";
@@ -35,63 +29,84 @@ const Team = () => {
     {
       name: "Archit Garg",
       role: "Secretary",
-      image: bosm,
       modelPath: "/secretary.glb",
+      linkedin:
+        "https://www.linkedin.com/in/archit-garg-7a1478266?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+      github: "",
+      insta:
+        "https://www.instagram.com/___ig_archit___?igsh=MTF0ZGV6N3VuOHM4aQ%3D%3D&utm_source=qr",
     },
     {
       name: "Devam Sheth",
       role: "Frontend Development Lead",
-      image: gameDev,
       modelPath: "/frontend.glb",
+      linkedin:
+        "https://www.linkedin.com/in/devam-sheth-011011280?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      github: "https://github.com/Devam-Sheth",
+      insta: "",
     },
     {
       name: "Ameesh Sethi",
       role: "Competitive Coding Lead",
-      image: cc,
       modelPath: "/cp.glb",
+      linkedin: "",
+      github: "",
+      insta: "",
     },
     {
       name: "Akshaj Rao",
       role: "Backend Development Lead",
-      image: gameDev,
       modelPath: "/backend.glb",
+      linkedin: "https://in.linkedin.com/in/akshaj-rao-4a7082311",
+      github: "https://github.com/cross-codes",
+      insta: "https://www.instagram.com/akshaj.rao?igsh=ejIwcGhuczY3bXBq",
     },
     {
       name: "Manvendra Siwatch",
       role: "AI/ML lead",
-      image: ai,
       modelPath: "/ai-ml.glb",
+      linkedin: "",
+      github: "",
+      insta: "",
     },
     {
       name: "Aditya Garg",
       role: "Game Development Lead",
-      image: gameDev,
       modelPath: "/gamedev.glb",
+      linkedin: "https://www.linkedin.com/in/aditya-garg-508873261",
+      github: "https://github.com/garg10aditya",
+      insta: "https://www.instagram.com/aditya_g.arg?igsh=MWtmMWh4eWttYjR0cw==",
     },
     {
       name: "Parth Khandelwal",
       role: "Oasis Coordinator",
-      image: oasis,
       modelPath: "/oasis.glb",
+      linkedin: "",
+      github: "",
+      insta: "",
     },
     {
       name: "Siddharth Khemani",
       role: "Apogee Coordinator, App Development Lead",
-      image: gameDev,
       modelPath: "/apogee.glb",
+      linkedin: "",
+      github: "",
+      insta: "",
     },
     {
       name: "Manish Goyal",
       role: "BOSM Joint Coordinator",
-      image: gameDev,
       modelPath: "/bosm.glb",
+      linkedin: "",
+      github: "",
+      insta: "",
     },
   ];
   const [expandedIndex, setExpandedIndex] = useState(null);
   const [selectedModel, setSelectedModel] = useState("/secretary.glb");
   const sectionRef = useRef(null);
   const [modelLoaded, setModelLoaded] = useState(false);
-
+  const [showPopup, setShowPopup] = useState(false);
   const handleClick = (index) => {
     setExpandedIndex(expandedIndex === index ? null : index);
     if (data[index].modelPath) {
@@ -129,9 +144,44 @@ const Team = () => {
                       <strong>Role:</strong> {member.role}
                     </p>
                     <div className="social-media-handles">
-                      <img src={linkedinLogo} alt="LinkedIn" />
-                      <img src={githubLogo} alt="GitHub" />
-                      <img src={instagramLogo} alt="Instagram" />
+                      <a href={member.linkedin} target="_blank">
+                        <img
+                          src={linkedinLogo}
+                          alt="LinkedIn"
+                          className="social-media-icons"
+                        />
+                      </a>
+                      <a href={member.github} target="_blank">
+                        <img
+                          src={githubLogo}
+                          alt="GitHub"
+                          className="social-media-icons"
+                        />
+                      </a>
+                      {showPopup && member.name === "Devam Sheth" && (
+                        <div className="popup">
+                          <p>
+                            Bro thinks he is ahead of the curve so he is not on
+                            Instagram
+                          </p>
+                        </div>
+                      )}
+                      <a
+                        href={member.insta}
+                        target="_blank"
+                        onMouseEnter={() =>
+                          member.name === "Devam Sheth" && setShowPopup(true)
+                        }
+                        onMouseLeave={() =>
+                          member.name === "Devam Sheth" && setShowPopup(false)
+                        }
+                      >
+                        <img
+                          src={instagramLogo}
+                          alt="Instagram"
+                          className="social-media-icons"
+                        />
+                      </a>
                     </div>
                   </div>
                 </Collapse>
@@ -235,10 +285,6 @@ function Band({ modelPath, maxSpeed = 50, minSpeed = 10 }) {
     [0, 0, 0],
     [0, 1.45, 0],
   ]);
-
-  useEffect(() => {
-    console.log(materials.base?.map);
-  }, [materials]);
 
   useFrame((state, delta) => {
     if (dragged) {

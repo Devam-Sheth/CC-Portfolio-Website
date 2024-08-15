@@ -1,17 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./Header.css";
-import logo from "../../assets/images/Logo.png";
+import logo from "../../assets/images/white logo.png";
 import { Typewriter } from "react-simple-typewriter";
 
 function Header() {
-  const tiltEffectSettings = {
-    max: 25,
-    perspective: 1000,
-    scale: 1.1,
-    speed: 500,
-    easing: "cubic-bezier(.03,.98,.52,.99)",
-  };
-
   const words = ["CODING CLUB BITS PILANI"];
   const words1 = [
     "MINIMUM BUGS, MAXIMUM EFFORT!",
@@ -22,19 +14,9 @@ function Header() {
     <div className="header">
       <div className="header-content flex">
         <div className="logo">
-            <img src={logo} className="logo-img" alt="" />
+          <img src={logo} className="logo-img" alt="" />
           <div className="center">
-            <h1 className="Mothercode">
-              <Typewriter
-                words={words}
-                loop={false}
-                cursor
-                typeSpeed={0}
-                deleteSpeed={0}
-                delaySpeed={0}
-                cursorStyle="_"
-              />
-            </h1>
+            <h1 className="Mothercode">CODING CLUB BITS PILANI</h1>
             <h2 className="quotes" style={{ margin: 0 }}>
               <Typewriter
                 words={words1}
