@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./Header.css";
-import logo from "../../assets/images/test_logo.png";
+import logo from "../../assets/images/logo.png";
 import { Typewriter } from "react-simple-typewriter";
 
 function Header() {
-  const words = ["CODING CLUB BITS PILANI"];
   const words1 = [
     "MINIMUM BUGS, MAXIMUM EFFORT!",
     "COMPILED SUCCESSFULLY..THAT'S WHAT WE CALL A...GIGGITY!",
