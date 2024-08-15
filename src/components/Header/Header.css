@@ -60,9 +60,19 @@
 }
 .logo-img {
   width: 100%;
-
   max-width: 30rem;
   margin-bottom: 1rem;
+  filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
+  animation: glowAnimation 1.5s infinite alternate;
+}
+
+@keyframes glowAnimation {
+  from {
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
+  }
+  to {
+    filter: drop-shadow(0 0 20px rgba(255, 0, 0, 1));
+  }
 }
 .Mothercode {
   font-family: "Mothercode";
@@ -107,7 +117,6 @@
   }
 }
 
-
 @media screen and (max-width: 500px) {
   .header {
     height: 100vh;
@@ -128,7 +137,7 @@
   .center {
     width: 20rem;
   }
-  .quotes{
+  .quotes {
     font-size: 1rem;
   }
 }
