@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
     "@react-three/drei": "^9.109.5",
     "@react-three/fiber": "^8.16.8",
     "@react-three/rapier": "^1.4.0",
@@ -20,6 +21,7 @@
     "react-collapse": "^5.1.1",
     "react-dom": "^18.3.1",
     "react-howler": "^5.2.0",
+    "react-popper": "^2.3.0",
     "react-simple-typewriter": "^5.0.1",
     "three": "^0.167.1"
   },

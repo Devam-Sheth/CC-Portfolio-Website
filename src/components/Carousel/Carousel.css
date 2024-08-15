@@ -1,19 +1,17 @@
-/* Carousel.css */
 .carousel {
   position: relative;
   width: 80%;
-  margin-top: 5vh;
-  height: 75vh;
-  margin-inline: auto; /* Center horizontally with a margin */
-  aspect-ratio: 16 / 9; /* Set the aspect ratio */
+
+  height: 70vh;
+  margin-inline: auto;
+  aspect-ratio: 16 / 9;
   display: flex;
   align-items: center;
   background-color: black;
   overflow: hidden;
   border-radius: 25px;
   color: white;
-  font-family: 'Mothercode', sans-serif;
-  margin-top: 17.5%;
+  font-family: "Mothercode", sans-serif;
 }
 .carousel-content {
   flex: 1;
@@ -24,48 +22,49 @@
   padding: 1rem; /* Add some padding */
 }
 
-.carousel-heading {
+.carousel-heading h3 {
   font-size: 2rem; /* Adjust heading size */
-  margin-bottom: 0.8rem; /* Space between heading and content */
+  margin: 0;
   color: white; /* Ensure heading is white */
   text-decoration: underline;
+  text-decoration-offset: 5px;
 }
 
 .carousel-text {
   color: white;
   z-index: 2; /* Make sure text is on top */
   position: relative; /* Ensure positioning works */
-  padding: 2.3rem;
+  padding: 2.3rem 3rem;
   font-family: Cascadia Code, Fira Code, monospace;
 }
 
-.carousel::before{
-  content: '';
+.carousel::before {
+  content: "";
   position: absolute;
   width: 100%;
   height: 140%;
-  background: radial-gradient(var(--clr),transparent);
-  background-color: #FF3131;
-  box-shadow: 0 0 20px rgb(8,8,8);
+  background: radial-gradient(var(--clr), transparent);
+  background-color: #ff3131;
+  box-shadow: 0 0 20px rgb(8, 8, 8);
   animation: animate 6s linear infinite;
   z-index: 1;
 }
 
-.carousel::after{
-  content: '';
+.carousel::after {
+  content: "";
   position: absolute;
-  inset: 5px;
+  inset: 1px;
   background-color: black;
-  border-radius: 20px;
+  border-radius: 1.5rem;
   z-index: 1;
 }
 
-@keyframes animate{
-  0%{
+@keyframes animate {
+  0% {
     transform: rotate(0deg);
     box-shadow: 10px;
   }
-  100%{
+  100% {
     transform: rotate(360deg);
   }
 }
@@ -101,7 +100,7 @@
 .carousel-content {
   flex: 1;
   width: 100%;
-  height: 60vh;
+  height: fit-content;
   text-align: center;
   z-index: 2;
 }
@@ -132,18 +131,15 @@
 .dot {
   width: 10px;
   height: 10px;
-  background-color:white;
+  background-color: white;
   border-radius: 50%;
   transition: background-color 0.3s, width 0.3s;
 }
 
 .dot.active {
   background-color: blue;
-  width: 100%; /* Expands to cover the container */
   position: relative;
-  width: 5rem; /* Width of the progress bar */
-  height: 10px; /* Height of the progress bar */
-  background-color:red;
+  background-color: red;
   border-radius: 5px;
   display: flex;
 }

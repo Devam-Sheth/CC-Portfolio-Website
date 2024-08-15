@@ -14,8 +14,8 @@
   object-fit: cover; /* Ensures the image covers the container without distortion */
   border: 1px solid #ccc; /* normal border */
   border-radius: 4px;
-  box-shadow: inset 10px 10px 6px rgb(255, 0, 0), /* glowing border */
-               10px 10px 9px rgba(230, 7, 7, 0.347); /* secondary glow */
+  box-shadow: inset 10px 10px 6px rgb(255, 0, 0),
+    /* glowing border */ 10px 10px 9px rgba(230, 7, 7, 0.347); /* secondary glow */
   border-radius: 20px;
 }
 
@@ -29,9 +29,9 @@
   font-family: "Mothercode";
 }
 
-.vertical.right img{
-  box-shadow: inset -10px 10px 6px rgb(255, 0, 0), /* glowing border */
-               -10px 10px 9px rgba(230, 7, 7, 0.347); /* secondary glow */
+.vertical.right img {
+  box-shadow: inset -5px 5px 6px rgb(255, 0, 0),
+    /* glowing border */ -5px 5px 9px rgba(230, 7, 7, 0.347); /* secondary glow */
 }
 
 .appearedText {
@@ -43,55 +43,52 @@
   display: flex; /* Allows children to use flexbox properties */
   flex-direction: column; /* Aligns text vertically */
   justify-content: center; /* Centers text vertically */
-  border: 2px solid rgb(255, 0, 0);
+  border: 1px solid rgb(255, 0, 0);
   border-radius: 10px;
-  
-  
+
   &:hover {
-      filter: contrast(1.1);
+    filter: contrast(1.1);
   }
-  
+
   &:active {
-      filter: contrast(0.9);
+    filter: contrast(0.9);
   }
-  
+
   &::before,
   &::after {
-      content: "";
-      position: absolute;
-      top: -10px;
-      left: -10px;
-      right: -10px;
-      bottom: -10px;
-      border: 2px solid rgb(255, 0, 0);
-      transition: all .5s;
-      animation: clippath 3s infinite linear;
-      border-radius: 10px;
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border: 1px solid rgb(255, 0, 0);
+    transition: all 0.5s;
+    animation: clippath 3s infinite linear;
+    border-radius: 10px;
   }
-  
+
   &::after {
-      animation: clippath 3s infinite -1.5s linear;
+    animation: clippath 3s infinite -1.5s linear;
   }
 }
 
 @keyframes clippath {
   0%,
   100% {
-      clip-path: inset(0 0 98% 0);
+    clip-path: inset(0 0 98% 0);
   }
-  
+
   25% {
-      clip-path: inset(0 98% 0 0);
+    clip-path: inset(0 98% 0 0);
   }
   50% {
-      clip-path: inset(98% 0 0 0);
+    clip-path: inset(98% 0 0 0);
   }
   75% {
-      clip-path: inset(0 0 0 98%);
+    clip-path: inset(0 0 0 98%);
   }
 }
-
-
 
 .appearedText h2 {
   font-size: 40px;
@@ -117,7 +114,7 @@
     padding: 5px;
   }
 
-  .animated-div img{
+  .animated-div img {
     width: 90vw;
     height: auto;
   }
@@ -138,7 +135,7 @@
   .appearedText {
     width: 90vw;
     max-width: 90vw;
-    margin:5px;
+    margin: 5px;
   }
 
   .appearedText h2 {
@@ -152,11 +149,11 @@
     margin-right: 5px;
   }
 
-  .animated-div img{
+  .animated-div img {
     box-shadow: none;
   }
 
-  .vertical.right img{
+  .vertical.right img {
     box-shadow: none;
   }
 }

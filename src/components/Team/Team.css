@@ -23,7 +23,7 @@
 .team-container {
   padding: 5rem 3rem;
   font-family: Poppins, Arial, sans-serif;
-  height: 100vh;
+  height: fit-content;
 }
 
 .team-member {
@@ -73,6 +73,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.popup {
+  position: absolute;
+  background-color: #333;
+  border: 1px solid black;
+  z-index: 10;
+  padding-inline: 1rem;
+  margin-top: 1rem;
+  margin-left: 6rem;
 }
 
 @media (max-width: 768px) {
