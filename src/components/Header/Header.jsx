@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Header.css";
-import logo from "../../assets/images/logo.png";
+import logo from "../../assets/images/preview.png";
 import { Typewriter } from "react-simple-typewriter";
 
 function Header() {
