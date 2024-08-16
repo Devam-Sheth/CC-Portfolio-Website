@@ -12,6 +12,7 @@
   border-radius: 25px;
   color: white;
   font-family: "Mothercode", sans-serif;
+  letter-spacing: 0.25rem;
 }
 .carousel-content {
   flex: 1;
@@ -41,12 +42,12 @@
 .carousel::before {
   content: "";
   position: absolute;
-  width: 100%;
+  width: 150%;
   height: 140%;
   background: radial-gradient(var(--clr), transparent);
   background-color: #ff3131;
   box-shadow: 0 0 20px rgb(8, 8, 8);
-  animation: animate 6s linear infinite;
+  animation: animate 4s ease-in-out infinite;
   z-index: 1;
 }
 
@@ -62,10 +63,9 @@
 @keyframes animate {
   0% {
     transform: rotate(0deg);
-    box-shadow: 10px;
   }
   100% {
-    transform: rotate(360deg);
+    transform: rotate(-360deg);
   }
 }
 
