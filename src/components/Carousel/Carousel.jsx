@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import "./Carousel.css";
-
+import { Element } from "react-scroll";
 const slides = [
   {
     heading: "About Us",
@@ -45,6 +45,7 @@ const Carousel = () => {
   };
 
   return (
+    <Element name="About">
     <div className="carousel">
       <button className="carousel-button prev" onClick={goToPrev}>
         <i className="fas fa-chevron-left"></i>
@@ -76,6 +77,7 @@ const Carousel = () => {
         </div>
       </div>
     </div>
+    </Element>
   );
 };
 

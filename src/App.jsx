@@ -5,15 +5,25 @@ import ContactUs from "./components/ContactUs/ContactUs";
 import Verticals from "./components/Verticals/Verticals";
 
 import Team from "./components/Team/Team";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
-    <>
-      <Header />
-      <Team />
-      <Carousel />
-      <Verticals />
-      <ContactUs />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Header />
+              <Team />
+              <Carousel />
+              <Verticals />
+              <ContactUs />
+            </>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
