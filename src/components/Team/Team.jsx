@@ -20,7 +20,7 @@ import gsap from "gsap";
 import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import ScrollTrigger from "gsap/ScrollTrigger";
-
+import {Element} from 'react-scroll';
 gsap.registerPlugin(ScrollTrigger);
 extend({ MeshLineGeometry, MeshLineMaterial });
 
@@ -128,7 +128,8 @@ const Team = () => {
   }, []);
 
   return (
-    <div className="team">
+    <Element name="Team">
+    <div id="Team" className="team">
       <h1 className="team-head">MEET THE TEAM</h1>
       <div className="team-cont">
         <div className="team-container">
@@ -235,6 +236,7 @@ const Team = () => {
         </div>
       </div>
     </div>
+    </Element>
   );
 };
 

@@ -2,9 +2,10 @@ import React from "react";
 import AnimatedDivRight from "./AnimatedDivRight";
 import AnimatedDivLeft from "./AnimatedDivLeft";
 import "./AnimatedDiv.css";
+import { Element } from "react-scroll";
 function Verticals() {
   return (
-    <div>
+    <Element name="Vertical">
       <div className="heading">
         <h1>VERTICALS</h1>
       </div>
@@ -106,7 +107,8 @@ function Verticals() {
           </div>
         </AnimatedDivRight>
       </div>
-    </div>
+   
+    </Element>
   );
 }
 
