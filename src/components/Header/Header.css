@@ -293,14 +293,15 @@
 
 @media screen and (max-width: 500px) {
   .header {
-    height: 100vh;
+    height: 55vh;
+    width: 100%;
   }
   .logo {
-    margin-top: 20%;
+    margin-top: 25%;
   }
   .logo img {
-    height: 35vh;
-    width: 35vh;
+    height: 27.5vh;
+    width: 27.5vh;
   }
   .Mothercode {
     font-size: 1rem;

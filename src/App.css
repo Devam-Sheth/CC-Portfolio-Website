@@ -12,3 +12,12 @@ html,
   background-color: black;
   color: white;
 }
+
+@media screen and (max-width: 500px) {
+  body,
+html,
+#root,
+.App {
+  width: 100%;
+}
+}
