@@ -1,6 +1,8 @@
 .carousel {
   position: relative;
   width: 80%;
+
+  height: 70vh;
   margin-inline: auto;
   aspect-ratio: 16 / 9;
   display: flex;
@@ -35,8 +37,6 @@
   position: relative; /* Ensure positioning works */
   padding: 2.3rem 3rem;
   font-family: Cascadia Code, Fira Code, monospace;
-  width: 100%;
-  aspect-ratio: 16/9;
 }
 
 .carousel::before {
@@ -75,7 +75,7 @@
   background: white;
   border: none;
   cursor: pointer;
-  z-index: 2;
+  z-index: 3;
   width: 40px; /* Adjust size of the button */
   height: 40px; /* Adjust size of the button */
   display: flex;
@@ -169,3 +169,4 @@
     font-size: 15px;
   }
 }
+
