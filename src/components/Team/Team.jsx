@@ -20,7 +20,7 @@ import gsap from "gsap";
 import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import {Element} from 'react-scroll';
+import { Element } from "react-scroll";
 gsap.registerPlugin(ScrollTrigger);
 extend({ MeshLineGeometry, MeshLineMaterial });
 
@@ -129,113 +129,116 @@ const Team = () => {
 
   return (
     <Element name="Team">
-    <div id="Team" className="team">
-      <h1 className="team-head">MEET THE TEAM</h1>
-      <div className="team-cont">
-        <div className="team-container">
-          <div className="team">
-            {data.map((member, index) => (
-              <div key={index} className="team-member">
-                <div className="collapsible" onClick={() => handleClick(index)}>
-                  {member.name}
-                </div>
-                <Collapse isOpened={expandedIndex === index}>
-                  <div className="content">
-                    <p>
-                      <strong>Role:</strong> {member.role}
-                    </p>
-                    <div className="social-media-handles">
-                      <a href={member.linkedin} target="_blank">
-                        <img
-                          src={linkedinLogo}
-                          alt="LinkedIn"
-                          className="social-media-icons"
-                        />
-                      </a>
-                      <a href={member.github} target="_blank">
-                        <img
-                          src={githubLogo}
-                          alt="GitHub"
-                          className="social-media-icons"
-                        />
-                      </a>
-                      {showPopup && member.name === "Devam Sheth" && (
-                        <div className="popup">
-                          <p>
-                            Bro thinks he is ahead of the curve so he is not on
-                            Instagram
-                          </p>
-                        </div>
-                      )}
-                      <a
-                        href={member.insta}
-                        target="_blank"
-                        onMouseEnter={() =>
-                          member.name === "Devam Sheth" && setShowPopup(true)
-                        }
-                        onMouseLeave={() =>
-                          member.name === "Devam Sheth" && setShowPopup(false)
-                        }
-                      >
-                        <img
-                          src={instagramLogo}
-                          alt="Instagram"
-                          className="social-media-icons"
-                        />
-                      </a>
-                    </div>
+      <div id="Team">
+        <h1 className="team-head">MEET THE TEAM</h1>
+        <div className="team-cont">
+          <div className="team-container">
+            <div className="team">
+              {data.map((member, index) => (
+                <div key={index} className="team-member">
+                  <div
+                    className="collapsible"
+                    onClick={() => handleClick(index)}
+                  >
+                    {member.name}
                   </div>
-                </Collapse>
-              </div>
-            ))}
+                  <Collapse isOpened={expandedIndex === index}>
+                    <div className="content">
+                      <p>
+                        <strong>Role:</strong> {member.role}
+                      </p>
+                      <div className="social-media-handles">
+                        <a href={member.linkedin} target="_blank">
+                          <img
+                            src={linkedinLogo}
+                            alt="LinkedIn"
+                            className="social-media-icons"
+                          />
+                        </a>
+                        <a href={member.github} target="_blank">
+                          <img
+                            src={githubLogo}
+                            alt="GitHub"
+                            className="social-media-icons"
+                          />
+                        </a>
+                        {showPopup && member.name === "Devam Sheth" && (
+                          <div className="popup">
+                            <p>
+                              Bro thinks he is ahead of the curve so he is not
+                              on Instagram
+                            </p>
+                          </div>
+                        )}
+                        <a
+                          href={member.insta}
+                          target="_blank"
+                          onMouseEnter={() =>
+                            member.name === "Devam Sheth" && setShowPopup(true)
+                          }
+                          onMouseLeave={() =>
+                            member.name === "Devam Sheth" && setShowPopup(false)
+                          }
+                        >
+                          <img
+                            src={instagramLogo}
+                            alt="Instagram"
+                            className="social-media-icons"
+                          />
+                        </a>
+                      </div>
+                    </div>
+                  </Collapse>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="team-card" ref={sectionRef}>
+            {modelLoaded && (
+              <Canvas
+                key={selectedModel}
+                camera={{ position: [0, 0, 13], fov: 25 }}
+              >
+                <ambientLight intensity={Math.PI} />
+                <Physics interpolate gravity={[0, -40, 0]} timeStep={1 / 60}>
+                  {selectedModel && <Band modelPath={selectedModel} />}
+                </Physics>
+                <Environment background blur={0.75}>
+                  <color attach="background" args={["black"]} />
+                  <Lightformer
+                    intensity={2}
+                    color="white"
+                    position={[0, -1, 5]}
+                    rotation={[0, 0, Math.PI / 3]}
+                    scale={[100, 0.1, 1]}
+                  />
+                  <Lightformer
+                    intensity={3}
+                    color="white"
+                    position={[-1, -1, 1]}
+                    rotation={[0, 0, Math.PI / 3]}
+                    scale={[100, 0.1, 1]}
+                  />
+                  <Lightformer
+                    intensity={3}
+                    color="white"
+                    position={[1, 1, 1]}
+                    rotation={[0, 0, Math.PI / 3]}
+                    scale={[100, 0.1, 1]}
+                  />
+                  <Lightformer
+                    intensity={10}
+                    color="white"
+                    position={[-10, 0, 14]}
+                    rotation={[0, Math.PI / 2, Math.PI / 3]}
+                    scale={[100, 10, 1]}
+                  />
+                </Environment>
+              </Canvas>
+            )}
           </div>
         </div>
-        <div className="team-card" ref={sectionRef}>
-          {modelLoaded && (
-            <Canvas
-              key={selectedModel}
-              camera={{ position: [0, 0, 13], fov: 25 }}
-            >
-              <ambientLight intensity={Math.PI} />
-              <Physics interpolate gravity={[0, -40, 0]} timeStep={1 / 60}>
-                {selectedModel && <Band modelPath={selectedModel} />}
-              </Physics>
-              <Environment background blur={0.75}>
-                <color attach="background" args={["black"]} />
-                <Lightformer
-                  intensity={2}
-                  color="white"
-                  position={[0, -1, 5]}
-                  rotation={[0, 0, Math.PI / 3]}
-                  scale={[100, 0.1, 1]}
-                />
-                <Lightformer
-                  intensity={3}
-                  color="white"
-                  position={[-1, -1, 1]}
-                  rotation={[0, 0, Math.PI / 3]}
-                  scale={[100, 0.1, 1]}
-                />
-                <Lightformer
-                  intensity={3}
-                  color="white"
-                  position={[1, 1, 1]}
-                  rotation={[0, 0, Math.PI / 3]}
-                  scale={[100, 0.1, 1]}
-                />
-                <Lightformer
-                  intensity={10}
-                  color="white"
-                  position={[-10, 0, 14]}
-                  rotation={[0, Math.PI / 2, Math.PI / 3]}
-                  scale={[100, 10, 1]}
-                />
-              </Environment>
-            </Canvas>
-          )}
-        </div>
       </div>
-    </div>
     </Element>
   );
 };
