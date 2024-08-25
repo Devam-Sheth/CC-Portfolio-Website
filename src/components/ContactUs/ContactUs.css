@@ -156,7 +156,6 @@
 @media (max-width: 1024px) {
   .contactus-container {
     grid-template-columns: 1fr;
-    padding: 1rem;
   }
 
   .contact-container {
@@ -228,7 +227,6 @@
     padding: 0.5rem;
   }
 }
-
 
 @media (max-width: 480px) {
   .contactus-container {

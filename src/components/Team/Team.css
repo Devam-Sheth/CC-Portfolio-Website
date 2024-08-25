@@ -108,4 +108,7 @@
     height: min-content;
     padding: 2rem;
   }
+  #Team {
+    padding: 0;
+  }
 }
