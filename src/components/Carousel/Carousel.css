@@ -1,4 +1,3 @@
-
 .carousel {
   position: relative;
   width: 80%;
@@ -27,16 +26,17 @@
 
 .carousel-heading {
   font-size: 2rem; /* Adjust heading size */
-  margin-bottom: 0.8rem; /* Space between heading and content */
+  /* margin-bottom: 0.2rem;  */
   color: white; /* Ensure heading is white */
   text-decoration: underline;
 }
 
 .carousel-text {
   color: white;
+  font-size: 1.2rem;
   z-index: 2; /* Make sure text is on top */
   position: relative; /* Ensure positioning works */
-  padding: 2.3rem;
+  padding: 2.5rem;
   font-family: Cascadia Code, Fira Code, monospace;
   overflow: hidden; /* Prevent content overflow */
 }
@@ -128,10 +128,9 @@
 }
 
 .dot.active {
-  background-color: blue;
+  background-color: red;
   width: 5rem; /* Width of the progress bar */
   height: 10px; /* Height of the progress bar */
-  background-color: red;
   border-radius: 5px;
   display: flex;
 }
@@ -149,13 +148,18 @@
     height: 60vh;
   }
 
+  .carousel-content{
+    padding-top: 0.5rem;
+  }
+
   .carousel-heading {
     font-size: 1.5rem;
   }
 
   .carousel-text {
-    font-size: 1rem;
+    font-size: 0.9rem;
     padding: 1rem;
+    padding-top: 0.3rem;
   }
 
   .carousel-button {
@@ -175,7 +179,7 @@
   }
 
   .carousel-text {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     padding: 0.5rem;
   }
 
@@ -184,7 +188,16 @@
     height: 25px;
   }
 
+  .dot-container {
+    gap: 0.3rem; 
+  }
+
+  .dot {
+    width: 8px; 
+    height: 8px;
+  }
+
   .dot.active {
-    width: 3rem;
+    width: 3rem; 
   }
 }

@@ -26,6 +26,7 @@
   align-items: center;
 
   text-align: center;
+  margin-top: 5%;
 }
 
 .header-content {
@@ -60,9 +61,19 @@
 }
 .logo-img {
   width: 100%;
-
   max-width: 30rem;
   margin-bottom: 1rem;
+  filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
+  animation: glowAnimation 1.5s infinite alternate;
+}
+
+@keyframes glowAnimation {
+  from {
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8));
+  }
+  to {
+    filter: drop-shadow(0 0 20px rgba(255, 0, 0, 1));
+  }
 }
 .Mothercode {
   font-family: "Mothercode";
@@ -79,7 +90,7 @@
   margin-top: 5%;
   letter-spacing: 0.3rem;
   padding: 0;
-  color:  #FF3131;
+  color: #ff3131;
 }
 
 .anta {
@@ -88,7 +99,154 @@
   font-style: normal;
   font-size: large;
 }
+.anta-small {
+  font-family: "Anta", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: small;
+}
+.navigation {
+  position: absolute;
+  width: fit-content;
+  height: 70px;
+  background: linear-gradient(180deg, #b80303, #2d0101);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-top: 50px;
+  top: 0;
+  right: 10px;
+}
 
+.navigation ul {
+  display: flex;
+  width: fit-content;
+}
+
+.navigation ul li {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  list-style: none;
+  z-index: 1;
+}
+
+.navigation ul li a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
+
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  line-height: 80px;
+  font-size: 1.5em;
+  text-align: center;
+  color: #000;
+  transition: 0.5s;
+}
+
+.navigation ul li.active a .icon {
+  transform: translateY(-29px);
+}
+
+.navigation ul li a .text {
+  position: absolute;
+  color: #000;
+  font-weight: 400;
+  font-size: 0.75em;
+  letter-spacing: 0.05em;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.5s;
+}
+
+.navigation ul li.active a .text {
+  opacity: 1;
+  transform: translateY(10px);
+}
+
+.navigation ul li a .circle {
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border-radius: 50%;
+  border: 1.8px solid #000;
+  transform: translateY(-37px) scale(0);
+}
+
+.navigation ul li.active a .circle {
+  transition: 0.5s;
+  transition-delay: 0.5s;
+  transform: translateY(-40px) scale(1);
+}
+
+.indicator {
+  position: absolute;
+  top: -50%;
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(0deg, #2d0101, #b80303);
+  border: 6px solid #06021b;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.indicator::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border-top-right-radius: 20px;
+  box-shadow: 1px -10px 0 #06021b;
+}
+
+.indicator::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -22px;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border-top-left-radius: 20px;
+  box-shadow: -1px -10px 0 #06021b;
+}
+
+.navigation ul li:nth-child(1).active ~ .indicator {
+  transform: translateX(calc(70px * 0));
+}
+
+.navigation ul li:nth-child(2).active ~ .indicator {
+  transform: translateX(calc(70px * 1));
+}
+
+.navigation ul li:nth-child(3).active ~ .indicator {
+  transform: translateX(calc(70px * 2));
+}
+
+.navigation ul li:nth-child(4).active ~ .indicator {
+  transform: translateX(calc(70px * 3));
+}
+
+.navigation ul li:nth-child(5).active ~ .indicator {
+  transform: translateX(calc(70px * 4));
+}
 
 @media screen and (max-width: 768px) {
   .header {
@@ -106,18 +264,40 @@
   .center {
     width: 20rem;
   }
+  .navigation {
+    height: 50px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .navigation ul li {
+    height: 50px;
+  }
+  .navigation ul li a .icon {
+    height: 25px;
+  }
+  .navigation ul li.active a .text {
+    transform: translateY(27px);
+  }
+  .indicator {
+    top: -80%;
+  }
+  .circle {
+    visibility: hidden;
+  }
 }
 
 @media screen and (max-width: 500px) {
   .header {
-    height: 100vh;
+    height: 55vh;
+    width: 100%;
   }
   .logo {
-    margin-top: 20%;
+    margin-top: 25%;
   }
   .logo img {
-    height: 35vh;
-    width: 35vh;
+    height: 27.5vh;
+    width: 27.5vh;
   }
   .Mothercode {
     font-size: 1rem;
@@ -128,7 +308,7 @@
   .center {
     width: 20rem;
   }
-  .quotes{
+  .quotes {
     font-size: 1rem;
   }
 }
