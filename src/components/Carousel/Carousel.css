@@ -152,6 +152,8 @@ h3{
     font-size: 1rem;
     padding: 1rem;
     padding-top: 0.3rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
   h3 {
     margin-bottom: 1.5rem;
@@ -160,8 +162,8 @@ h3{
 
 @media (max-width: 768px) {
   .carousel {
-    width: 95%;
-    height: 20rem;
+    width: 85%;
+    height: 25rem;
   }
 
   .carousel-content{
@@ -186,8 +188,8 @@ h3{
 
 @media (max-width: 590px) {
   .carousel {
-    width: 100%;
-    height: 20rem;
+    width: 80%;
+    height: 25rem;
   }
   .carousel-heading {
     font-size: 1.2rem;
@@ -197,6 +199,8 @@ h3{
   .carousel-text {
     font-size: 0.8rem;
     padding: 0.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 
   .carousel-button {
@@ -218,10 +222,9 @@ h3{
   }
 }
 
-
 @media (max-width: 480px) {
   .carousel {
-    width: 100%;
+    width: 85%;
     height: 19rem;
   }
   h3 {
