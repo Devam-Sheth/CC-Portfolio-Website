@@ -1,7 +1,9 @@
 .team {
   display: flex;
   flex-direction: column;
-  padding-left: 1rem;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 5rem;
 }
 
 .team-cont {
@@ -21,7 +23,7 @@
 }
 
 .team-container {
-  padding: 5rem 3rem;
+  padding: 3rem 3rem 5rem 3rem;
   font-family: Poppins, Arial, sans-serif;
   height: fit-content;
 }
@@ -110,6 +112,12 @@
   }
   #Team {
     padding: 0;
+  }
+
+  .team {
+    padding: 0;
+    justify-content: center;
+    align-items: center;
   }
 }
 
