@@ -1,71 +1,74 @@
 .carousel {
   position: relative;
   width: 80%;
-
-  height: 70vh;
-  margin-inline: auto;
-  aspect-ratio: 16 / 9;
+  margin-top: 5vh;
+  height: 30rem;
+  margin-inline: auto; /* Center horizontally */
+  aspect-ratio: 16 / 9; /* Set the aspect ratio */
   display: flex;
   align-items: center;
   background-color: black;
   overflow: hidden;
   border-radius: 25px;
   color: white;
-  font-family: "Mothercode", sans-serif;
-  letter-spacing: 0.25rem;
+  font-family: 'Mothercode', sans-serif;
 }
+
 .carousel-content {
   flex: 1;
   width: 100%;
-  height: 60vh;
+  height: calc(100% - 50px); /* Adjust height to leave space for dots */
   text-align: center;
   z-index: 2; /* Ensure content is on top */
   padding: 1rem; /* Add some padding */
+  overflow: hidden; /* Prevent content overflow */
 }
 
-.carousel-heading h3 {
+.carousel-heading {
   font-size: 2rem; /* Adjust heading size */
-  margin: 0;
+  /* margin-bottom: 0.2rem;  */
   color: white; /* Ensure heading is white */
   text-decoration: underline;
-  text-decoration-offset: 5px;
 }
 
 .carousel-text {
   color: white;
+  font-size: 1.2rem;
   z-index: 2; /* Make sure text is on top */
   position: relative; /* Ensure positioning works */
-  padding: 2.3rem 3rem;
+  padding: 2.5rem;
   font-family: Cascadia Code, Fira Code, monospace;
+  overflow: hidden; /* Prevent content overflow */
 }
 
 .carousel::before {
-  content: "";
+  content: '';
   position: absolute;
-  width: 150%;
+  width: 100%;
   height: 140%;
   background: radial-gradient(var(--clr), transparent);
-  background-color: #ff3131;
+  background-color: #FF3131;
   box-shadow: 0 0 20px rgb(8, 8, 8);
-  animation: animate 4s ease-in-out infinite;
+  animation: animate 6s linear infinite;
   z-index: 1;
 }
 
 .carousel::after {
-  content: "";
+  content: '';
   position: absolute;
-  inset: 1px;
+  inset: 5px;
   background-color: black;
-  border-radius: 1.5rem;
+  border-radius: 20px;
   z-index: 1;
 }
 
 @keyframes animate {
   0% {
     transform: rotate(0deg);
+    box-shadow: 10px;
   }
   100% {
-    transform: rotate(-360deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -97,18 +100,6 @@
   height: auto;
 }
 
-.carousel-content {
-  flex: 1;
-  width: 100%;
-  height: fit-content;
-  text-align: center;
-  z-index: 2;
-}
-
-.carousel-text {
-  font-size: 1.2rem;
-}
-
 .carousel-dots {
   text-align: center;
   position: absolute;
@@ -137,9 +128,9 @@
 }
 
 .dot.active {
-  background-color: blue;
-  position: relative;
   background-color: red;
+  width: 5rem; /* Width of the progress bar */
+  height: 10px; /* Height of the progress bar */
   border-radius: 5px;
   display: flex;
 }
@@ -151,22 +142,119 @@
   transition: width 0.3s;
 }
 
-@media (max-width: 500px) {
-  .carousel{
-    width: 90%;
+h3{
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+@media (max-width: 975px) {
+  .carousel-text {
+    font-size: 1rem;
+    padding: 1rem;
+    padding-top: 0.3rem;
   }
-  .carousel-text{
-    width: 100%;
-    font-size: 8px;
-    padding: 0;
-    z-index: 1;
-  }
-  .carousel-button{
-    height: 15px;
-    width: 15px;
-  }
-  .carousel-heading h3{
-    font-size: 15px;
+  h3 {
+    margin-bottom: 1.5rem;
   }
 }
 
+@media (max-width: 768px) {
+  .carousel {
+    width: 95%;
+    height: 20rem;
+  }
+
+  .carousel-content{
+    padding-top: 0.5rem;
+  }
+
+  .carousel-heading {
+    font-size: 1.5rem;
+  }
+
+  .carousel-text {
+    font-size: 0.9rem;
+    padding: 1rem;
+    padding-top: 0.3rem;
+  }
+
+  .carousel-button {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 590px) {
+  .carousel {
+    width: 100%;
+    height: 20rem;
+  }
+  .carousel-heading {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+
+  .carousel-text {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+
+  .carousel-button {
+    width: 25px;
+    height: 25px;
+  }
+
+  .dot-container {
+    gap: 0.3rem; 
+  }
+
+  .dot {
+    width: 8px; 
+    height: 8px;
+  }
+
+  .dot.active {
+    width: 3rem; 
+  }
+}
+
+
+@media (max-width: 480px) {
+  .carousel {
+    width: 100%;
+    height: 19rem;
+  }
+  h3 {
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .carousel-heading {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+  }
+
+  .carousel-text {
+    font-size: 0.6rem;
+    padding: 0.5rem;
+  }
+
+  .carousel-button {
+    width: 25px;
+    height: 25px;
+  }
+
+  .dot-container {
+    gap: 0.3rem; 
+  }
+
+  .dot {
+    width: 8px; 
+    height: 8px;
+  }
+
+  .dot.active {
+    width: 3rem; 
+  }
+}
