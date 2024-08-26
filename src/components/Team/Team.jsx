@@ -105,7 +105,7 @@ const Team = () => {
   const [expandedIndex, setExpandedIndex] = useState(null);
   const [selectedModel, setSelectedModel] = useState("/secretary.glb");
   const sectionRef = useRef(null);
-  const [modelLoaded, setModelLoaded] = useState(false);
+  const [modelLoaded, setModelLoaded] = useState(true);
   const [showPopup, setShowPopup] = useState(false);
   const handleClick = (index) => {
     setExpandedIndex(expandedIndex === index ? null : index);
@@ -115,14 +115,22 @@ const Team = () => {
   };
 
   useEffect(() => {
+    console.log("SectionRef:", sectionRef.current); // Log the ref
+    if (!sectionRef.current) return;
+
     const ctx = gsap.context(() => {
       ScrollTrigger.create({
         trigger: sectionRef.current,
         start: "top bottom",
         end: "bottom top",
-        onEnter: () => setModelLoaded(true),
+        onEnter: () => {
+          console.log("Model loaded!"); // Log when model is loaded
+          setModelLoaded(true);
+        },
       });
-    });
+    }, sectionRef.current);
+
+    ScrollTrigger.refresh(); // Force refresh after setting up ScrollTrigger
 
     return () => ctx.revert();
   }, []);
@@ -194,48 +202,50 @@ const Team = () => {
             </div>
           </div>
           <div className="team-card" ref={sectionRef}>
-            {modelLoaded && (
-              <Canvas
-                key={selectedModel}
-                camera={{ position: [0, 0, 13], fov: 25 }}
-              >
-                <ambientLight intensity={Math.PI} />
-                <Physics interpolate gravity={[0, -40, 0]} timeStep={1 / 60}>
-                  {selectedModel && <Band modelPath={selectedModel} />}
-                </Physics>
-                <Environment background blur={0.75}>
-                  <color attach="background" args={["black"]} />
-                  <Lightformer
-                    intensity={2}
-                    color="white"
-                    position={[0, -1, 5]}
-                    rotation={[0, 0, Math.PI / 3]}
-                    scale={[100, 0.1, 1]}
-                  />
-                  <Lightformer
-                    intensity={3}
-                    color="white"
-                    position={[-1, -1, 1]}
-                    rotation={[0, 0, Math.PI / 3]}
-                    scale={[100, 0.1, 1]}
-                  />
-                  <Lightformer
-                    intensity={3}
-                    color="white"
-                    position={[1, 1, 1]}
-                    rotation={[0, 0, Math.PI / 3]}
-                    scale={[100, 0.1, 1]}
-                  />
-                  <Lightformer
-                    intensity={10}
-                    color="white"
-                    position={[-10, 0, 14]}
-                    rotation={[0, Math.PI / 2, Math.PI / 3]}
-                    scale={[100, 10, 1]}
-                  />
-                </Environment>
-              </Canvas>
-            )}
+            <Canvas
+              key={selectedModel}
+              camera={{ position: [0, 0, 13], fov: 25 }}
+            >
+              {modelLoaded && (
+                <>
+                  <ambientLight intensity={Math.PI} />
+                  <Physics interpolate gravity={[0, -40, 0]} timeStep={1 / 60}>
+                    {selectedModel && <Band modelPath={selectedModel} />}
+                  </Physics>
+                  <Environment background blur={0.75}>
+                    <color attach="background" args={["black"]} />
+                    <Lightformer
+                      intensity={2}
+                      color="white"
+                      position={[0, -1, 5]}
+                      rotation={[0, 0, Math.PI / 3]}
+                      scale={[100, 0.1, 1]}
+                    />
+                    <Lightformer
+                      intensity={3}
+                      color="white"
+                      position={[-1, -1, 1]}
+                      rotation={[0, 0, Math.PI / 3]}
+                      scale={[100, 0.1, 1]}
+                    />
+                    <Lightformer
+                      intensity={3}
+                      color="white"
+                      position={[1, 1, 1]}
+                      rotation={[0, 0, Math.PI / 3]}
+                      scale={[100, 0.1, 1]}
+                    />
+                    <Lightformer
+                      intensity={10}
+                      color="white"
+                      position={[-10, 0, 14]}
+                      rotation={[0, Math.PI / 2, Math.PI / 3]}
+                      scale={[100, 10, 1]}
+                    />
+                  </Environment>
+                </>
+              )}
+            </Canvas>
           </div>
         </div>
       </div>
