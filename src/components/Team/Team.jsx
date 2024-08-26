@@ -114,27 +114,6 @@ const Team = () => {
     }
   };
 
-  useEffect(() => {
-    console.log("SectionRef:", sectionRef.current); // Log the ref
-    if (!sectionRef.current) return;
-
-    const ctx = gsap.context(() => {
-      ScrollTrigger.create({
-        trigger: sectionRef.current,
-        start: "top bottom",
-        end: "bottom top",
-        onEnter: () => {
-          console.log("Model loaded!"); // Log when model is loaded
-          setModelLoaded(true);
-        },
-      });
-    }, sectionRef.current);
-
-    ScrollTrigger.refresh(); // Force refresh after setting up ScrollTrigger
-
-    return () => ctx.revert();
-  }, []);
-
   return (
     <Element name="Team">
       <div id="Team">
