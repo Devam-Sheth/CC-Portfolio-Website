@@ -22,7 +22,6 @@
   background: black;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  margin-inline: 5rem;
 }
 
 .contact-container h2 {
@@ -158,12 +157,9 @@
     grid-template-columns: 1fr;
   }
 
-  .contact-container {
-    margin-inline: 2rem;
-  }
-
   .image-container img {
     padding-right: 0;
+    display: none;
   }
 
   .contact-container h2 {
@@ -199,10 +195,6 @@
 }
 
 @media (max-width: 768px) {
-  .contact-container {
-    margin-inline: 1rem;
-  }
-
   .contact-container h2 {
     padding-left: 0;
     font-size: 1.3rem;
@@ -231,10 +223,6 @@
 @media (max-width: 480px) {
   .contactus-container {
     padding: 0.5rem;
-  }
-
-  .contact-container {
-    margin-inline: 0.5rem;
   }
 
   .contact-container h2 {
