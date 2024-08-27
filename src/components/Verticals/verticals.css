@@ -14,9 +14,8 @@ body {
 }
 .heading {
   font-family: "Mothercode";
-  font-size: 3rem;
+  font-size: 1.25rem;
   font-weight: bolder;
-  letter-spacing: 0.3rem;
   color: white;
   text-align: center;
   width: auto;
