@@ -2,11 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Header.css";
 import logo from "../../assets/images/preview.png";
 import { Typewriter } from "react-simple-typewriter";
-import Vector from "../../assets/images/Vector.svg";
-import About from "../../assets/images/About.svg";
-import Information from "../../assets/images/Information Resources.svg";
-import Vertical_scroll from "../../assets/images/vertical-scroll.svg";
-import { Link as ScrollLink, Element } from "react-scroll";
+
 function Header() {
   const words1 = [
     "MINIMUM BUGS, MAXIMUM EFFORT!",
@@ -29,8 +25,9 @@ function Header() {
     };
   }, []);
   return (
+
     <>
-      <div className="navigation">
+      {/* <div className="navigation">
         <ul>
           <li className="list active">
             <a href="#">
@@ -71,8 +68,8 @@ function Header() {
 
           <div className="indicator"></div>
         </ul>
-      </div>
-      <div className="header">
+      </div> */}
+      <div className="header" id="home"> 
         <div className="header-content flex">
           <div className="logo">
             <img src={logo} className="logo-img" alt="" />

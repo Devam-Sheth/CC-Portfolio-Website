@@ -6,9 +6,11 @@ import Verticals from "./components/Verticals/Verticals";
 
 import Team from "./components/Team/Team";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
 function App() {
   return (
     <BrowserRouter>
+        <Navbar/>
       <Routes>
         <Route
           path="/"

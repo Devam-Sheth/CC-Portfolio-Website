@@ -6,7 +6,7 @@ import './verticals.css';
 const Verticals = () => {
   return (
 
-    <div className="verticalContainer">
+    <div className="verticalContainer" id="verticals">
 
       <div className="heading">
         <h1>VERTICALS</h1>
