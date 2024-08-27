@@ -45,8 +45,8 @@ const Carousel = () => {
   };
 
   return (
-    <Element name="About">
-    <div className="carousel">
+  
+    <div id="carousel" className="carousel">
       <button className="carousel-button prev" onClick={goToPrev}>
         <i className="fas fa-chevron-left"></i>
       </button>
@@ -77,7 +77,7 @@ const Carousel = () => {
         </div>
       </div>
     </div>
-    </Element>
+  
   );
 };
 

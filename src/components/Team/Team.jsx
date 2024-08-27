@@ -115,7 +115,7 @@ const Team = () => {
   };
 
   return (
-    <Element name="Team">
+    
       <div id="Team">
         <h1 className="team-head">MEET THE TEAM</h1>
         <div className="team-cont">
@@ -228,7 +228,7 @@ const Team = () => {
           </div>
         </div>
       </div>
-    </Element>
+    
   );
 };
 
